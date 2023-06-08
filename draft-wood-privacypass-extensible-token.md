@@ -106,7 +106,7 @@ which is defined as follows:
   structure whose semantics are determined by the type. The type and length of each
   extension are 2-octet integers, in network byte order. The length of the extensions
   list is also a is a 2-octet integer, in network byte order.
-  
+
 Future documents may specify extensions to be included in this new token structure.
 Registration details for these extensions are in {{iana}}.
 
@@ -117,7 +117,7 @@ would therefore use the ExtensibleToken format.
 # Security Considerations
 
 Privacy considerations for tokens that include additional information are discussed
-in {{Section 6.1 of ?ARCHITECTURE=I-D.ietf-privacypass-architecture}}. 
+in {{Section 6.1 of ?ARCHITECTURE=I-D.ietf-privacypass-architecture}}.
 
 # IANA Considerations {#iana}
 
