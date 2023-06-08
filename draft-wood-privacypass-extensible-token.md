@@ -9,16 +9,16 @@ number:
 date:
 consensus: true
 v: 3
-area: SEC
-workgroup: Privacy Pass
+area: "Security"
+workgroup: "Privacy Pass"
 keyword:
  - token
 venue:
-  group: Privacy Pass
-  type: Working Group
-  mail: privacy-pass@ietf.org
-  github: chris-wood/draft-wood-privacypass-extensible-token
-  latest: https://chris-wood.github.io/draft-wood-privacypass-extensible-token
+  group: "Privacy Pass"
+  type: "Working Group"
+  mail: "privacy-pass@ietf.org"
+  github: "chris-wood/draft-wood-privacypass-extensible-token"
+  latest: "https://chris-wood.github.io/draft-wood-privacypass-extensible-token/draft-wood-privacypass-extensible-token.html"
 
 author:
  -
