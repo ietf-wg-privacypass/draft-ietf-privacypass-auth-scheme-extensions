@@ -1,6 +1,6 @@
-# The Extensible PrivateToken for Privacy Pass
+# The PrivateToken HTTP Authentication Scheme Extensions Parameter
 
-This is the working area for the individual Internet-Draft, "The Extensible PrivateToken for Privacy Pass".
+This is the working area for the individual Internet-Draft, "The PrivateToken HTTP Authentication Scheme Extensions Parameter".
 
 * [Editor's Copy](https://chris-wood.github.io/draft-wood-privacypass-extensible-token/#go.draft-wood-privacypass-extensible-token.html)
 * [Datatracker Page](https://datatracker.ietf.org/doc/draft-wood-privacypass-extensible-token)
