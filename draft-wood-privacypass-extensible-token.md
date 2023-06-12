@@ -126,6 +126,7 @@ in the "Privacy Pass Parameters" page to list possible extension values and thei
 Each extension has a two-byte type, so the maximum possible value is 0xFFFF = 65535.
 
 Template:
+
 - Type: The two-byte extension type
 - Name: Name of the extension
 - Reference: Where this extension and its value are defined
