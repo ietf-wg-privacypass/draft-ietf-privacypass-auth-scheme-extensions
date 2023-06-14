@@ -102,7 +102,7 @@ extension are 2-octet integers, in network byte order. The length of the extensi
 list is also a is a 2-octet integer, in network byte order.
 
 Clients, Issuers, and Origins all agree on the content and encoding of this Extensions
-structure, i.e., they agree on the same type-length-value list. The list should be ordered
+structure, i.e., they agree on the same type-length-value list. The list MUST be ordered
 by ExtensionType value, from 1 to 65535. The value of the Extensions structure is used 
 as-is when verifying the value of the corresponding "token" parameter in the "PrivateToken" 
 authentication header.
