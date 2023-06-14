@@ -107,8 +107,6 @@ by ExtensionType value, from 1 to 65535. The value of the Extensions structure i
 as-is when verifying the value of the corresponding "token" parameter in the "PrivateToken" 
 authentication header.
 
-ExtensionType numbers 65000 to 65535 are reserved for per-deployment use and MUST not be
-reserved for non-deployment-specific standards.
 
 Future documents may specify extensions to be included in this structure.
 Registration details for these extensions are in {{iana}}.
