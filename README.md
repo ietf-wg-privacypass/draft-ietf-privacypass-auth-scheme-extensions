@@ -2,16 +2,16 @@
 
 This is the working area for the individual Internet-Draft, "The PrivateToken HTTP Authentication Scheme Extensions Parameter".
 
-* [Editor's Copy](https://chris-wood.github.io/draft-wood-privacypass-extensible-token/#go.draft-wood-privacypass-extensible-token.html)
-* [Datatracker Page](https://datatracker.ietf.org/doc/draft-wood-privacypass-extensible-token)
-* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-wood-privacypass-extensible-token)
-* [Compare Editor's Copy to Individual Draft](https://chris-wood.github.io/draft-wood-privacypass-extensible-token/#go.draft-wood-privacypass-extensible-token.diff)
+* [Editor's Copy](https://chris-wood.github.io/draft-wood-privacypass-extensible-token/#go.draft-wood-privacypass-auth-scheme-extensions.html)
+* [Datatracker Page](https://datatracker.ietf.org/doc/draft-wood-privacypass-auth-scheme-extensions)
+* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-wood-privacypass-auth-scheme-extensions)
+* [Compare Editor's Copy to Individual Draft](https://chris-wood.github.io/draft-wood-privacypass-extensible-token/#go.draft-wood-privacypass-auth-scheme-extensions.diff)
 
 
 ## Contributing
 
 See the
-[guidelines for contributions](https://github.com/chris-wood/draft-wood-privacypass-extensible-token/blob//CONTRIBUTING.md).
+[guidelines for contributions](https://github.com/chris-wood/draft-wood-privacypass-extensible-token/blob/main/CONTRIBUTING.md).
 
 Contributions can be made by creating pull requests.
 The GitHub interface supports creating pull requests using the Edit (✏) button.
