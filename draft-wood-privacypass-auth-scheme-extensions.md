@@ -3,7 +3,7 @@ title: "The PrivateToken HTTP Authentication Scheme Extensions Parameter"
 abbrev: "PrivateToken Authentication Extensions"
 category: std
 
-docname: draft-wood-privacypass-extensible-token-latest
+docname: draft-wood-privacypass-auth-scheme-extensions-latest
 submissiontype: IETF
 number:
 date:
