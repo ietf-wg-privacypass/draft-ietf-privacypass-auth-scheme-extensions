@@ -130,6 +130,7 @@ Template:
 
 - Type: The two-byte extension type
 - Name: Name of the extension
+- Value: Syntax and semantics of the extension
 - Reference: Where this extension and its value are defined
 - Notes: Any notes associated with the entry
 
