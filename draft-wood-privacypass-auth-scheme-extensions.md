@@ -65,9 +65,9 @@ to flow from the issuance protocol, including, for example, public metadata
 that is incorporated into the issuance protocol.
 
 This document specifies a new parameter for the "PrivateToken" HTTP authentication
-scheme. This extensions parameter, otherwise referred to as public metadata,
-is cryptographically bound to the Token structure via the Privacy Pass issuance
-protocol.
+scheme for carrying extensions. This extensions parameter, otherwise referred to as
+public metadata, is cryptographically bound to the Token structure via the Privacy
+Pass issuance protocol.
 
 # Conventions and Definitions
 
