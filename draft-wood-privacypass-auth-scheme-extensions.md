@@ -69,6 +69,13 @@ scheme for carrying extensions. This extensions parameter, otherwise referred to
 public metadata, is cryptographically bound to the Token structure via the Privacy
 Pass issuance protocol.
 
+As an example, Clients presenting this extension parameter to origins would use an
+Authorization header field like the following:
+
+~~~
+Authorization: PrivateToken token="abc..." extensions="def..."
+~~~
+
 # Conventions and Definitions
 
 {::boilerplate bcp14-tagged}
