@@ -148,8 +148,5 @@ has a clear description about the privacy implications of using the extension
 framed in the context of partitioning the client anonymity set as described
 in {{Section 6.1 of ?ARCHITECTURE}}.
 
-Values 0xF000-0xFFFF are reserved for private use, to enable proprietary uses
-and limited experimentation.
-
 --- back
 
