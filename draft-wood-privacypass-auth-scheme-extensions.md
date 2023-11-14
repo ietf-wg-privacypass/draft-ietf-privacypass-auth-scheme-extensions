@@ -69,13 +69,6 @@ scheme for carrying extensions. This extensions parameter, otherwise referred to
 public metadata, is cryptographically bound to the Token structure via the Privacy
 Pass issuance protocol.
 
-As an example, Clients presenting this extension parameter to origins would use an
-Authorization header field like the following:
-
-~~~
-Authorization: PrivateToken token="abc..." extensions="def..."
-~~~
-
 # Conventions and Definitions
 
 {::boilerplate bcp14-tagged}
@@ -112,20 +105,41 @@ Clients, Issuers, and Origins all agree on the content and encoding of this Exte
 structure, i.e., they agree on the same type-length-value list. The list MUST be ordered
 by ExtensionType value, from 1 to 65535. The value of the Extensions structure is used
 as-is when verifying the value of the corresponding "token" parameter in the "PrivateToken"
-authentication header.
+authentication header. As an example, Clients presenting this extension parameter to origins
+would use an Authorization header field like the following:
+
+~~~
+Authorization: PrivateToken token="abc..." extensions="def..."
+~~~
 
 Future documents may specify extensions to be included in this structure.
 Registration details for these extensions are in {{iana}}.
 
 Each Privacy Pass issuance protocol, identified by a token type, specifices the structure
-of the PrivateToken value to be used. Issuance protocols that support public metadata
-would define a way to convey this metadata as a set of extensions in an Extensions
-structure.
+of the PrivateToken value to be used. Extensions are bound to the resulting tokens via the
+issuance protocol. In particular, the value of an Extensions structure is provided as
+metadata for the issuance protocol. Candidate issuance protocols are specified in
+{{?PUBLIC-ISSUANCE=I-D.hendrickson-privacypass-public-metadata}}.
+
+# Extensions Negotiation {#negotiation}
+
+The mechanism by which Clients and Origins determine which set of extensions to provide
+for redemption is out of scope for this document. In some Privacy Pass deployments, the set
+of extensions may be well known Clients and Origins and therefore not require negotiation.
+In other settings, negotiation may be required. However, negotiation can raise privacy
+risks, especially if negotiation can be abused by Origins for partitioning Clients and
+risking Origin-Client unlinkability. Some of these risks may be mitigated if all Clients
+in a given redemption context respond to negotiation in the same manner. However, if
+Clients have different observable behavior, e.g., if certain extension use is determined
+by user choice, Origins can observe this differential behavior and therefore partition
+Clients in a redemption context.
 
 # Security Considerations
 
 Privacy considerations for tokens that include additional information are discussed
-in {{Section 6.1 of ?ARCHITECTURE=I-D.ietf-privacypass-architecture}}.
+in {{Section 6.1 of ?ARCHITECTURE=I-D.ietf-privacypass-architecture}}. Additional
+considerations for use of extensions, including those that arise when deciding which
+extensions to use, are described in {{negotiation}}.
 
 # IANA Considerations {#iana}
 
