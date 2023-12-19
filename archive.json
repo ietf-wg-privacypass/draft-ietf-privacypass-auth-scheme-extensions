@@ -1,0 +1,320 @@
+{
+  "magic": "E!vIA5L86J2I",
+  "timestamp": "2023-12-19T00:20:04.554265+00:00",
+  "repo": "chris-wood/draft-wood-privacypass-auth-scheme-extensions",
+  "labels": [
+    {
+      "name": "bug",
+      "description": "Something isn't working",
+      "color": "d73a4a"
+    },
+    {
+      "name": "documentation",
+      "description": "Improvements or additions to documentation",
+      "color": "0075ca"
+    },
+    {
+      "name": "duplicate",
+      "description": "This issue or pull request already exists",
+      "color": "cfd3d7"
+    },
+    {
+      "name": "enhancement",
+      "description": "New feature or request",
+      "color": "a2eeef"
+    },
+    {
+      "name": "good first issue",
+      "description": "Good for newcomers",
+      "color": "7057ff"
+    },
+    {
+      "name": "help wanted",
+      "description": "Extra attention is needed",
+      "color": "008672"
+    },
+    {
+      "name": "invalid",
+      "description": "This doesn't seem right",
+      "color": "e4e669"
+    },
+    {
+      "name": "question",
+      "description": "Further information is requested",
+      "color": "d876e3"
+    },
+    {
+      "name": "wontfix",
+      "description": "This will not be worked on",
+      "color": "ffffff"
+    }
+  ],
+  "issues": [
+    {
+      "number": 2,
+      "id": "I_kwDOJs5J2s5o-Jg8",
+      "title": "Extension negotiation",
+      "url": "https://github.com/chris-wood/draft-wood-privacypass-auth-scheme-extensions/issues/2",
+      "state": "OPEN",
+      "author": "chris-wood",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "I wonder if it would be useful for origins to express what sort of extensions they want for a particular token. They could do this by including a list of extension types in the `WWW-Authenticate` challenge header. If clients don't want to provide the list of extensions they request, they could simply choose to not respond to the challenge. Without something like this, we would either have a default set of extensions sent by clients that are ultimately ignored by origins (which might be fine), or this the set of extensions would need to be configured between clients and origins. ",
+      "createdAt": "2023-06-16T18:29:30Z",
+      "updatedAt": "2023-06-16T18:29:30Z",
+      "closedAt": null,
+      "comments": []
+    }
+  ],
+  "pulls": [
+    {
+      "number": 1,
+      "id": "PR_kwDOJs5J2s5TAhuA",
+      "title": "Update draft-wood-privacypass-extensible-token.md",
+      "url": "https://github.com/chris-wood/draft-wood-privacypass-auth-scheme-extensions/pull/1",
+      "state": "MERGED",
+      "author": "smhendrickson",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Make extension ordering strict, and reserve the last 535 ExtensionTypes for private use.",
+      "createdAt": "2023-06-14T15:26:05Z",
+      "updatedAt": "2023-06-14T15:33:09Z",
+      "baseRepository": "chris-wood/draft-wood-privacypass-auth-scheme-extensions",
+      "baseRefName": "main",
+      "baseRefOid": "f642d8fb657c8f4dd105a2e9935016257f357e07",
+      "headRepository": "chris-wood/draft-wood-privacypass-auth-scheme-extensions",
+      "headRefName": "smhendrickson-patch-1",
+      "headRefOid": "ed0ad1cc16d95d13d2e6ca4a17f72245465b2ff7",
+      "closedAt": "2023-06-14T15:33:09Z",
+      "mergedAt": "2023-06-14T15:33:09Z",
+      "mergedBy": "chris-wood",
+      "mergeCommit": {
+        "oid": "a6370a8c4f4811e2de83b44f89daf17e1a7d86b2"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJs5J2s5YM3Ll",
+          "commit": {
+            "abbreviatedOid": "7057383"
+          },
+          "author": "chris-wood",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-06-14T15:31:31Z",
+          "updatedAt": "2023-06-14T15:31:32Z",
+          "comments": [
+            {
+              "originalPosition": 13,
+              "body": "This text already exists in the IANA considerations section.",
+              "createdAt": "2023-06-14T15:31:31Z",
+              "updatedAt": "2023-06-14T15:31:32Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs5J2s5YM3QY",
+          "commit": {
+            "abbreviatedOid": "7057383"
+          },
+          "author": "chris-wood",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-06-14T15:31:40Z",
+          "updatedAt": "2023-06-14T15:31:40Z",
+          "comments": [
+            {
+              "originalPosition": 13,
+              "body": "```suggestion\r\n```",
+              "createdAt": "2023-06-14T15:31:40Z",
+              "updatedAt": "2023-06-14T15:31:40Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs5J2s5YM3XX",
+          "commit": {
+            "abbreviatedOid": "7057383"
+          },
+          "author": "chris-wood",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-06-14T15:31:53Z",
+          "updatedAt": "2023-06-14T15:31:53Z",
+          "comments": [
+            {
+              "originalPosition": 7,
+              "body": "```suggestion\r\nstructure, i.e., they agree on the same type-length-value list. The list MUST be ordered\r\n```",
+              "createdAt": "2023-06-14T15:31:53Z",
+              "updatedAt": "2023-06-14T15:31:53Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs5J2s5YM3s9",
+          "commit": {
+            "abbreviatedOid": "6fa96bc"
+          },
+          "author": "chris-wood",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-06-14T15:32:29Z",
+          "updatedAt": "2023-06-14T15:32:29Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOJs5J2s5YM38z",
+          "commit": {
+            "abbreviatedOid": "6fa96bc"
+          },
+          "author": "chris-wood",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-06-14T15:32:55Z",
+          "updatedAt": "2023-06-14T15:32:55Z",
+          "comments": [
+            {
+              "originalPosition": 11,
+              "body": "```suggestion\r\nstructure, i.e., they agree on the same type-length-value list. The list MUST be ordered\r\nby ExtensionType value, from 1 to 65535. The value of the Extensions structure is used\r\nas-is when verifying the value of the corresponding \"token\" parameter in the \"PrivateToken\"\r\nauthentication header.\r\n```",
+              "createdAt": "2023-06-14T15:32:55Z",
+              "updatedAt": "2023-06-14T15:32:55Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "id": "PR_kwDOJs5J2s5Wjdn6",
+      "title": "Add extensions Authorization header example",
+      "url": "https://github.com/chris-wood/draft-wood-privacypass-auth-scheme-extensions/pull/3",
+      "state": "MERGED",
+      "author": "smhendrickson",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2023-07-27T14:40:07Z",
+      "updatedAt": "2023-07-27T20:20:37Z",
+      "baseRepository": "chris-wood/draft-wood-privacypass-auth-scheme-extensions",
+      "baseRefName": "main",
+      "baseRefOid": "f688787146143feddeb8d30a0a030b4cfcb80580",
+      "headRepository": "chris-wood/draft-wood-privacypass-auth-scheme-extensions",
+      "headRefName": "smhendrickson-patch-2",
+      "headRefOid": "257a2895f41e04c7db5c323896b3242f24b7e7af",
+      "closedAt": "2023-07-27T20:20:36Z",
+      "mergedAt": "2023-07-27T20:20:36Z",
+      "mergedBy": "chris-wood",
+      "mergeCommit": {
+        "oid": "efaac8c70bdf4a00556c798696be3220e12f3e7d"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJs5J2s5cbfej",
+          "commit": {
+            "abbreviatedOid": "257a289"
+          },
+          "author": "chris-wood",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-07-27T20:20:31Z",
+          "updatedAt": "2023-07-27T20:20:31Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "id": "PR_kwDOJs5J2s5aHK5T",
+      "title": "Remove reference to reserved extension block",
+      "url": "https://github.com/chris-wood/draft-wood-privacypass-auth-scheme-extensions/pull/4",
+      "state": "MERGED",
+      "author": "smhendrickson",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Echoing https://github.com/ietf-wg-privacypass/base-drafts/pull/469, which addresses https://github.com/ietf-wg-privacypass/base-drafts/issues/451 if we were to bring this into base-drafts.",
+      "createdAt": "2023-09-12T10:21:27Z",
+      "updatedAt": "2023-09-13T21:14:18Z",
+      "baseRepository": "chris-wood/draft-wood-privacypass-auth-scheme-extensions",
+      "baseRefName": "main",
+      "baseRefOid": "efaac8c70bdf4a00556c798696be3220e12f3e7d",
+      "headRepository": "chris-wood/draft-wood-privacypass-auth-scheme-extensions",
+      "headRefName": "smhendrickson-patch-3",
+      "headRefOid": "b0ed4ab7aaf7a8d96944a6c340ec34e9f78af6d7",
+      "closedAt": "2023-09-13T21:14:18Z",
+      "mergedAt": "2023-09-13T21:14:18Z",
+      "mergedBy": "chris-wood",
+      "mergeCommit": {
+        "oid": "9ccaa0093f3928661c8fd0c5c6ffa52081e2f629"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJs5J2s5g4pWn",
+          "commit": {
+            "abbreviatedOid": "b0ed4ab"
+          },
+          "author": "chris-wood",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-09-13T21:14:14Z",
+          "updatedAt": "2023-09-13T21:14:14Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "id": "PR_kwDOJs5J2s5fbLxt",
+      "title": "Negotiation is out of scope",
+      "url": "https://github.com/chris-wood/draft-wood-privacypass-auth-scheme-extensions/pull/5",
+      "state": "MERGED",
+      "author": "chris-wood",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2023-11-14T15:39:43Z",
+      "updatedAt": "2023-11-20T20:07:51Z",
+      "baseRepository": "chris-wood/draft-wood-privacypass-auth-scheme-extensions",
+      "baseRefName": "main",
+      "baseRefOid": "9ccaa0093f3928661c8fd0c5c6ffa52081e2f629",
+      "headRepository": "chris-wood/draft-wood-privacypass-auth-scheme-extensions",
+      "headRefName": "caw/no-negotiation",
+      "headRefOid": "0b80fce27e84a17244ac9231d775f6314a4d4dea",
+      "closedAt": "2023-11-20T20:07:50Z",
+      "mergedAt": "2023-11-20T20:07:50Z",
+      "mergedBy": "smhendrickson",
+      "mergeCommit": {
+        "oid": "4e138a18679b35e066941abdb4578255d36203f5"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJs5J2s5nugV3",
+          "commit": {
+            "abbreviatedOid": "0b80fce"
+          },
+          "author": "smhendrickson",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-11-20T16:31:55Z",
+          "updatedAt": "2023-11-20T16:31:55Z",
+          "comments": []
+        }
+      ]
+    }
+  ]
+}
