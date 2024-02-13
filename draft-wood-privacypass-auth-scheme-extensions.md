@@ -124,15 +124,16 @@ metadata for the issuance protocol. Candidate issuance protocols are specified i
 # Extensions Negotiation {#negotiation}
 
 The mechanism by which Clients and Origins determine which set of extensions to provide
-for redemption is out of scope for this document. In some Privacy Pass deployments, the set
-of extensions may be well known Clients and Origins and therefore not require negotiation.
-In other settings, negotiation may be required. However, negotiation can raise privacy
-risks, especially if negotiation can be abused by Origins for partitioning Clients and
-risking Origin-Client unlinkability. Some of these risks may be mitigated if all Clients
-in a given redemption context respond to negotiation in the same manner. However, if
-Clients have different observable behavior, e.g., if certain extension use is determined
-by user choice, Origins can observe this differential behavior and therefore partition
-Clients in a redemption context.
+for redemption is out of scope for this document.
+
+In some Privacy Pass deployments, the set of extensions may be well known Clients and Origins
+and therefore not require negotiation. In other settings, negotiation may be required.
+However, negotiation can raise privacy risks, especially if negotiation can be abused by
+Origins for partitioning Clients and risking Origin-Client unlinkability. Some of these risks
+may be mitigated if all Clients in a given redemption context respond to negotiation in the
+same manner. However, if Clients have different observable behavior, e.g., if certain
+extension use is determined by user choice, Origins can observe this differential behavior
+and therefore partition Clients in a redemption context.
 
 # Security Considerations
 
