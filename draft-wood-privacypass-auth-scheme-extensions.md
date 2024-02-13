@@ -109,7 +109,7 @@ authentication header. As an example, Clients presenting this extension paramete
 would use an Authorization header field like the following:
 
 ~~~
-Authorization: PrivateToken token="abc..." extensions="def..."
+Authorization: PrivateToken token="abc...", extensions="def..."
 ~~~
 
 Future documents may specify extensions to be included in this structure.
