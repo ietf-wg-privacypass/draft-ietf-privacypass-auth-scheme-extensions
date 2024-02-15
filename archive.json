@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-02-13T00:19:30.571899+00:00",
+  "timestamp": "2024-02-15T00:18:57.053234+00:00",
   "repo": "chris-wood/draft-wood-privacypass-auth-scheme-extensions",
   "labels": [
     {
@@ -315,6 +315,32 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 6,
+      "id": "PR_kwDOJs5J2s5mzQNq",
+      "title": "Updates draft to comply with RFC9110, and better highlight scope",
+      "url": "https://github.com/chris-wood/draft-wood-privacypass-auth-scheme-extensions/pull/6",
+      "state": "OPEN",
+      "author": "thibmeu",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "https://www.rfc-editor.org/rfc/rfc9110#name-lists-rule-abnf-extension\r\nPrivateToken parameters are `#auth-params`, which are comma separated.\r\n\r\nIn addition, this PR updates extension negotiation section to have the first sentence separate from the privacy risk/discussion",
+      "createdAt": "2024-02-13T22:34:16Z",
+      "updatedAt": "2024-02-13T22:34:28Z",
+      "baseRepository": "chris-wood/draft-wood-privacypass-auth-scheme-extensions",
+      "baseRefName": "main",
+      "baseRefOid": "4e138a18679b35e066941abdb4578255d36203f5",
+      "headRepository": "thibmeu/draft-wood-privacypass-auth-scheme-extensions",
+      "headRefName": "main",
+      "headRefOid": "dfe5d0c1ddda93e7b50cd56e3f6c071c74dfd6dc",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
