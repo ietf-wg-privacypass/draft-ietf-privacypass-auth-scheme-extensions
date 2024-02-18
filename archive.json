@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-02-15T00:18:57.053234+00:00",
+  "timestamp": "2024-02-18T00:20:34.484120+00:00",
   "repo": "chris-wood/draft-wood-privacypass-auth-scheme-extensions",
   "labels": [
     {
@@ -328,7 +328,7 @@
       "labels": [],
       "body": "https://www.rfc-editor.org/rfc/rfc9110#name-lists-rule-abnf-extension\r\nPrivateToken parameters are `#auth-params`, which are comma separated.\r\n\r\nIn addition, this PR updates extension negotiation section to have the first sentence separate from the privacy risk/discussion",
       "createdAt": "2024-02-13T22:34:16Z",
-      "updatedAt": "2024-02-13T22:34:28Z",
+      "updatedAt": "2024-02-15T01:16:18Z",
       "baseRepository": "chris-wood/draft-wood-privacypass-auth-scheme-extensions",
       "baseRefName": "main",
       "baseRefOid": "4e138a18679b35e066941abdb4578255d36203f5",
@@ -340,7 +340,21 @@
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOJs5J2s5wJrf1",
+          "commit": {
+            "abbreviatedOid": "dfe5d0c"
+          },
+          "author": "smhendrickson",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Thanks for the review and PR!",
+          "createdAt": "2024-02-15T01:16:18Z",
+          "updatedAt": "2024-02-15T01:16:18Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
