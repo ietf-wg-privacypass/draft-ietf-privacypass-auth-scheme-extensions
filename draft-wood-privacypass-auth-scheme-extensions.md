@@ -99,7 +99,7 @@ struct {
 The contents of Extensions are a list of Extension values, each of which is a type-length-value
 structure whose semantics are determined by the type. The type and length of each
 extension are 2-octet integers, in network byte order. The length of the extensions
-list is also a is a 2-octet integer, in network byte order.
+list is also a 2-octet integer, in network byte order.
 
 Clients, Issuers, and Origins all agree on the content and encoding of this Extensions
 structure, i.e., they agree on the same type-length-value list. The list MUST be ordered
@@ -115,7 +115,7 @@ Authorization: PrivateToken token="abc..." extensions="def..."
 Future documents may specify extensions to be included in this structure.
 Registration details for these extensions are in {{iana}}.
 
-Each Privacy Pass issuance protocol, identified by a token type, specifices the structure
+Each Privacy Pass issuance protocol, identified by a token type, specifies the structure
 of the PrivateToken value to be used. Extensions are bound to the resulting tokens via the
 issuance protocol. In particular, the value of an Extensions structure is provided as
 metadata for the issuance protocol. Candidate issuance protocols are specified in
@@ -123,9 +123,9 @@ metadata for the issuance protocol. Candidate issuance protocols are specified i
 
 # Extensions Negotiation {#negotiation}
 
-The mechanism by which Clients and Origins determine which set of extensions to provide
+The mechanism Clients and Origins use to determine which set of extensions to provide
 for redemption is out of scope for this document. In some Privacy Pass deployments, the set
-of extensions may be well known Clients and Origins and therefore not require negotiation.
+of extensions may be well known to Clients and Origins and thus not require negotiation.
 In other settings, negotiation may be required. However, negotiation can raise privacy
 risks, especially if negotiation can be abused by Origins for partitioning Clients and
 risking Origin-Client unlinkability. Some of these risks may be mitigated if all Clients
@@ -158,7 +158,7 @@ Template:
 New entries in this registry are subject to the Specification Required
 registration policy ({{!RFC8126, Section 4.6}}). Designated experts need to
 ensure that the extension is sufficiently clearly defined and, importantly,
-has a clear description about the privacy implications of using the extension
+has a clear description of the privacy implications of using the extension,
 framed in the context of partitioning the client anonymity set as described
 in {{Section 6.1 of ?ARCHITECTURE}}.
 
