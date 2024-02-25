@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-02-22T00:19:04.000991+00:00",
+  "timestamp": "2024-02-25T00:20:34.529341+00:00",
   "repo": "chris-wood/draft-wood-privacypass-auth-scheme-extensions",
   "labels": [
     {
@@ -353,6 +353,53 @@
           "createdAt": "2024-02-15T01:16:18Z",
           "updatedAt": "2024-02-15T01:16:18Z",
           "comments": []
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "id": "PR_kwDOJs5J2s5nrDiW",
+      "title": "Fix typos, wording",
+      "url": "https://github.com/chris-wood/draft-wood-privacypass-auth-scheme-extensions/pull/7",
+      "state": "OPEN",
+      "author": "e271828-",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2024-02-22T17:16:52Z",
+      "updatedAt": "2024-02-22T18:46:33Z",
+      "baseRepository": "chris-wood/draft-wood-privacypass-auth-scheme-extensions",
+      "baseRefName": "main",
+      "baseRefOid": "4e138a18679b35e066941abdb4578255d36203f5",
+      "headRepository": "e271828-/draft-wood-privacypass-auth-scheme-extensions",
+      "headRefName": "main",
+      "headRefOid": "dfb42aee54ead2e7ee1fa5e748103c53e9467005",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJs5J2s5xDPQy",
+          "commit": {
+            "abbreviatedOid": "dfb42ae"
+          },
+          "author": "smhendrickson",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Thank you for the detailed review!",
+          "createdAt": "2024-02-22T18:45:26Z",
+          "updatedAt": "2024-02-22T18:46:33Z",
+          "comments": [
+            {
+              "originalPosition": 26,
+              "body": "nit: should this say 'thus *do* not require'",
+              "createdAt": "2024-02-22T18:45:26Z",
+              "updatedAt": "2024-02-22T18:46:33Z"
+            }
+          ]
         }
       ]
     }
