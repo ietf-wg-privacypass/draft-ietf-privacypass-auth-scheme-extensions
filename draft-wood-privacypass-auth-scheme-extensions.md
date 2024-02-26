@@ -125,7 +125,7 @@ metadata for the issuance protocol. Candidate issuance protocols are specified i
 
 The mechanism Clients and Origins use to determine which set of extensions to provide
 for redemption is out of scope for this document. In some Privacy Pass deployments, the set
-of extensions may be well known to Clients and Origins and thus not require negotiation.
+of extensions may be well known to Clients and Origins and thus do not require negotiation.
 In other settings, negotiation may be required. However, negotiation can raise privacy
 risks, especially if negotiation can be abused by Origins for partitioning Clients and
 risking Origin-Client unlinkability. Some of these risks may be mitigated if all Clients
