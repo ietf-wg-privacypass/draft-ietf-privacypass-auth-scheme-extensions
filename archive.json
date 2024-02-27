@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-02-25T00:20:34.529341+00:00",
+  "timestamp": "2024-02-27T00:19:02.619153+00:00",
   "repo": "chris-wood/draft-wood-privacypass-auth-scheme-extensions",
   "labels": [
     {
@@ -321,24 +321,26 @@
       "id": "PR_kwDOJs5J2s5mzQNq",
       "title": "Updates draft to comply with RFC9110, and better highlight scope",
       "url": "https://github.com/chris-wood/draft-wood-privacypass-auth-scheme-extensions/pull/6",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "thibmeu",
-      "authorAssociation": "NONE",
+      "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "https://www.rfc-editor.org/rfc/rfc9110#name-lists-rule-abnf-extension\r\nPrivateToken parameters are `#auth-params`, which are comma separated.\r\n\r\nIn addition, this PR updates extension negotiation section to have the first sentence separate from the privacy risk/discussion",
       "createdAt": "2024-02-13T22:34:16Z",
-      "updatedAt": "2024-02-15T01:16:18Z",
+      "updatedAt": "2024-02-26T16:25:33Z",
       "baseRepository": "chris-wood/draft-wood-privacypass-auth-scheme-extensions",
       "baseRefName": "main",
-      "baseRefOid": "4e138a18679b35e066941abdb4578255d36203f5",
+      "baseRefOid": "5bf6085939a4bad9424c7e0051370fe65f27b386",
       "headRepository": "thibmeu/draft-wood-privacypass-auth-scheme-extensions",
       "headRefName": "main",
-      "headRefOid": "dfe5d0c1ddda93e7b50cd56e3f6c071c74dfd6dc",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "4d55cad1b8cf7635181929e284fef455907aaeba",
+      "closedAt": "2024-02-26T16:25:33Z",
+      "mergedAt": "2024-02-26T16:25:33Z",
+      "mergedBy": "chris-wood",
+      "mergeCommit": {
+        "oid": "a58f1fc68b5e413a97b68388a44d23a07262a635"
+      },
       "comments": [],
       "reviews": [
         {
@@ -353,6 +355,19 @@
           "createdAt": "2024-02-15T01:16:18Z",
           "updatedAt": "2024-02-15T01:16:18Z",
           "comments": []
+        },
+        {
+          "id": "PRR_kwDOJs5J2s5xVWW6",
+          "commit": {
+            "abbreviatedOid": "dfe5d0c"
+          },
+          "author": "chris-wood",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-02-26T16:24:48Z",
+          "updatedAt": "2024-02-26T16:24:48Z",
+          "comments": []
         }
       ]
     },
@@ -361,24 +376,26 @@
       "id": "PR_kwDOJs5J2s5nrDiW",
       "title": "Fix typos, wording",
       "url": "https://github.com/chris-wood/draft-wood-privacypass-auth-scheme-extensions/pull/7",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "e271828-",
-      "authorAssociation": "NONE",
+      "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2024-02-22T17:16:52Z",
-      "updatedAt": "2024-02-22T18:46:33Z",
+      "updatedAt": "2024-02-26T16:24:36Z",
       "baseRepository": "chris-wood/draft-wood-privacypass-auth-scheme-extensions",
       "baseRefName": "main",
       "baseRefOid": "4e138a18679b35e066941abdb4578255d36203f5",
       "headRepository": "e271828-/draft-wood-privacypass-auth-scheme-extensions",
       "headRefName": "main",
-      "headRefOid": "dfb42aee54ead2e7ee1fa5e748103c53e9467005",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "ec2daba409f455b479d32c973ad710f5185b4435",
+      "closedAt": "2024-02-26T16:24:35Z",
+      "mergedAt": "2024-02-26T16:24:35Z",
+      "mergedBy": "chris-wood",
+      "mergeCommit": {
+        "oid": "5bf6085939a4bad9424c7e0051370fe65f27b386"
+      },
       "comments": [],
       "reviews": [
         {
@@ -400,6 +417,39 @@
               "updatedAt": "2024-02-22T18:46:33Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOJs5J2s5xVWIb",
+          "commit": {
+            "abbreviatedOid": "dfb42ae"
+          },
+          "author": "chris-wood",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-02-26T16:24:22Z",
+          "updatedAt": "2024-02-26T16:24:23Z",
+          "comments": [
+            {
+              "originalPosition": 26,
+              "body": "```suggestion\r\nof extensions may be well known to Clients and Origins and thus do not require negotiation.\r\n```",
+              "createdAt": "2024-02-26T16:24:22Z",
+              "updatedAt": "2024-02-26T16:24:23Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs5J2s5xVWNl",
+          "commit": {
+            "abbreviatedOid": "ec2daba"
+          },
+          "author": "chris-wood",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-02-26T16:24:31Z",
+          "updatedAt": "2024-02-26T16:24:31Z",
+          "comments": []
         }
       ]
     }
