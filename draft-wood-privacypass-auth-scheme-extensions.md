@@ -124,7 +124,7 @@ metadata for the issuance protocol. Candidate issuance protocols are specified i
 # Extensions Negotiation {#negotiation}
 
 The mechanism Clients and Origins use to determine which set of extensions to provide
-for redemption is out of scope for this document. 
+for redemption is out of scope for this document.
 
 In some Privacy Pass deployments, the set
 of extensions may be well known to Clients and Origins and thus do not require negotiation.
