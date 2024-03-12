@@ -103,10 +103,10 @@ list is also a 2-octet integer, in network byte order.
 
 Clients, Issuers, and Origins all agree on the content and encoding of this Extensions
 structure, i.e., they agree on the same type-length-value list. The list MUST be ordered
-by ExtensionType value, from 1 to 65535. The value of the Extensions structure is used
-as-is when verifying the value of the corresponding "token" parameter in the "PrivateToken"
-authentication header. As an example, Clients presenting this extension parameter to origins
-would use an Authorization header field like the following:
+by ExtensionType value, from 0 to 65535. Extension types MAY be repeated. The value of the
+Extensions structure is used as-is when verifying the value of the corresponding "token" parameter
+in the "PrivateToken" authentication header. As an example, Clients presenting this extension
+parameter to origins would use an Authorization header field like the following:
 
 ~~~
 Authorization: PrivateToken token="abc...", extensions="def..."
