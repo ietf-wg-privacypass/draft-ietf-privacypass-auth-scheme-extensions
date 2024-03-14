@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-03-12T00:18:48.468054+00:00",
+  "timestamp": "2024-03-14T00:18:38.593608+00:00",
   "repo": "chris-wood/draft-wood-privacypass-auth-scheme-extensions",
   "labels": [
     {
@@ -449,6 +449,46 @@
           "body": "",
           "createdAt": "2024-02-26T16:24:31Z",
           "updatedAt": "2024-02-26T16:24:31Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "id": "PR_kwDOJs5J2s5pWowU",
+      "title": "Add precision on extension types",
+      "url": "https://github.com/chris-wood/draft-wood-privacypass-auth-scheme-extensions/pull/8",
+      "state": "OPEN",
+      "author": "thibmeu",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "The draft is ambiguous on two points, which this commit addresses:\r\n1. extension types MAY be repeated,\r\n2. extension type MAY be `0`, even though this is a reseved value.\r\n   Otherwise, we must update the structure to start at `1`.\r\n\r\nIn addition, this commit fixes lint which the CI complains about.",
+      "createdAt": "2024-03-12T09:50:51Z",
+      "updatedAt": "2024-03-12T17:38:44Z",
+      "baseRepository": "chris-wood/draft-wood-privacypass-auth-scheme-extensions",
+      "baseRefName": "main",
+      "baseRefOid": "a58f1fc68b5e413a97b68388a44d23a07262a635",
+      "headRepository": "thibmeu/draft-wood-privacypass-auth-scheme-extensions",
+      "headRefName": "add-precision-on-extension-types",
+      "headRefOid": "a0db4f21df059e3b0c7772d14321fbba2de1600b",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJs5J2s5zJT7f",
+          "commit": {
+            "abbreviatedOid": "a0db4f2"
+          },
+          "author": "smhendrickson",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Thank you!",
+          "createdAt": "2024-03-12T17:38:44Z",
+          "updatedAt": "2024-03-12T17:38:44Z",
           "comments": []
         }
       ]
