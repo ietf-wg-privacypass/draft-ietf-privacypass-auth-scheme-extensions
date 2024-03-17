@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-03-14T00:18:38.593608+00:00",
+  "timestamp": "2024-03-17T00:20:55.649041+00:00",
   "repo": "chris-wood/draft-wood-privacypass-auth-scheme-extensions",
   "labels": [
     {
@@ -492,6 +492,40 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 9,
+      "id": "PR_kwDOJs5J2s5pvulj",
+      "title": "Add mention of required base64url padding",
+      "url": "https://github.com/chris-wood/draft-wood-privacypass-auth-scheme-extensions/pull/9",
+      "state": "OPEN",
+      "author": "thibmeu",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Make the spec consistent with [Privacy Pass Auth Scheme](https://datatracker.ietf.org/doc/html/draft-ietf-privacypass-auth-scheme-15#name-token-challenge-structure). base64url padding is required.",
+      "createdAt": "2024-03-15T13:21:26Z",
+      "updatedAt": "2024-03-15T13:23:43Z",
+      "baseRepository": "chris-wood/draft-wood-privacypass-auth-scheme-extensions",
+      "baseRefName": "main",
+      "baseRefOid": "a58f1fc68b5e413a97b68388a44d23a07262a635",
+      "headRepository": "thibmeu/draft-wood-privacypass-auth-scheme-extensions",
+      "headRefName": "add-base64url-padding",
+      "headRefOid": "ae4ed88de053d26dcd5c053f611820bcac8c9655",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "thibmeu",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "lint error is due to an error on the main branch, which https://github.com/chris-wood/draft-wood-privacypass-auth-scheme-extensions/pull/8 addresses",
+          "createdAt": "2024-03-15T13:23:42Z",
+          "updatedAt": "2024-03-15T13:23:42Z"
+        }
+      ],
+      "reviews": []
     }
   ]
 }
