@@ -79,6 +79,8 @@ As defined in {{Section 2.2 of AUTHSCHEME}}, the "PrivateToken" authentication
 scheme defines one parameter, "token", which contains the base64url-encoded
 Token struct. This document defines a new parameter, "extensions," which contains
 the base64url-encoded representation of the following Extensions structure.
+This document follows the default padding behavior described in
+{{Section 3.2 of !RFC4648}}, so the base64url value MUST include padding.
 
 ~~~
 struct {
