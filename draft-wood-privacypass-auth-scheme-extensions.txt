@@ -121,7 +121,9 @@ Table of Contents
    authentication scheme defines one parameter, "token", which contains
    the base64url-encoded Token struct.  This document defines a new
    parameter, "extensions," which contains the base64url-encoded
-   representation of the following Extensions structure.
+   representation of the following Extensions structure.  This document
+   follows the default padding behavior described in Section 3.2 of
+   [RFC4648], so the base64url value MUST include padding.
 
    struct {
        ExtensionType extension_type;
@@ -233,6 +235,10 @@ Table of Contents
               Requirement Levels", BCP 14, RFC 2119,
               DOI 10.17487/RFC2119, March 1997,
               <https://www.rfc-editor.org/rfc/rfc2119>.
+
+   [RFC4648]  Josefsson, S., "The Base16, Base32, and Base64 Data
+              Encodings", RFC 4648, DOI 10.17487/RFC4648, October 2006,
+              <https://www.rfc-editor.org/rfc/rfc4648>.
 
    [RFC8126]  Cotton, M., Leiba, B., and T. Narten, "Guidelines for
               Writing an IANA Considerations Section in RFCs", BCP 26,
