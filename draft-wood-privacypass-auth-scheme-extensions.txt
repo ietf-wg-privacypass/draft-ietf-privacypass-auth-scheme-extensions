@@ -5,8 +5,8 @@
 Privacy Pass                                              S. Hendrickson
 Internet-Draft                                                    Google
 Intended status: Standards Track                              C. A. Wood
-Expires: 29 August 2024                                 Cloudflare, Inc.
-                                                        26 February 2024
+Expires: 19 September 2024                              Cloudflare, Inc.
+                                                           18 March 2024
 
 
     The PrivateToken HTTP Authentication Scheme Extensions Parameter
@@ -52,7 +52,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 29 August 2024.
+   This Internet-Draft will expire on 19 September 2024.
 
 Copyright Notice
 
@@ -146,13 +146,14 @@ Table of Contents
    Clients, Issuers, and Origins all agree on the content and encoding
    of this Extensions structure, i.e., they agree on the same type-
    length-value list.  The list MUST be ordered by ExtensionType value,
-   from 1 to 65535.  The value of the Extensions structure is used as-is
-   when verifying the value of the corresponding "token" parameter in
-   the "PrivateToken" authentication header.  As an example, Clients
-   presenting this extension parameter to origins would use an
-   Authorization header field like the following:
+   from 0 to 65535.  Extension types MAY be repeated.  The value of the
+   Extensions structure is used as-is when verifying the value of the
+   corresponding "token" parameter in the "PrivateToken" authentication
+   header.  As an example, Clients presenting this extension parameter
+   to origins would use an Authorization header field like the
+   following:
 
-   Authorization: PrivateToken token="abc..." extensions="def..."
+   Authorization: PrivateToken token="abc...", extensions="def..."
 
    Future documents may specify extensions to be included in this
    structure.  Registration details for these extensions are in
@@ -169,17 +170,19 @@ Table of Contents
 
    The mechanism Clients and Origins use to determine which set of
    extensions to provide for redemption is out of scope for this
-   document.  In some Privacy Pass deployments, the set of extensions
-   may be well known to Clients and Origins and thus do not require
-   negotiation.  In other settings, negotiation may be required.
-   However, negotiation can raise privacy risks, especially if
-   negotiation can be abused by Origins for partitioning Clients and
-   risking Origin-Client unlinkability.  Some of these risks may be
-   mitigated if all Clients in a given redemption context respond to
-   negotiation in the same manner.  However, if Clients have different
-   observable behavior, e.g., if certain extension use is determined by
-   user choice, Origins can observe this differential behavior and
-   therefore partition Clients in a redemption context.
+   document.
+
+   In some Privacy Pass deployments, the set of extensions may be well
+   known to Clients and Origins and thus do not require negotiation.  In
+   other settings, negotiation may be required.  However, negotiation
+   can raise privacy risks, especially if negotiation can be abused by
+   Origins for partitioning Clients and risking Origin-Client
+   unlinkability.  Some of these risks may be mitigated if all Clients
+   in a given redemption context respond to negotiation in the same
+   manner.  However, if Clients have different observable behavior,
+   e.g., if certain extension use is determined by user choice, Origins
+   can observe this differential behavior and therefore partition
+   Clients in a redemption context.
 
 5.  Security Considerations
 
