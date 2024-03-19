@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-03-17T00:20:55.649041+00:00",
+  "timestamp": "2024-03-19T00:19:18.460805+00:00",
   "repo": "chris-wood/draft-wood-privacypass-auth-scheme-extensions",
   "labels": [
     {
@@ -63,6 +63,22 @@
       "body": "I wonder if it would be useful for origins to express what sort of extensions they want for a particular token. They could do this by including a list of extension types in the `WWW-Authenticate` challenge header. If clients don't want to provide the list of extensions they request, they could simply choose to not respond to the challenge. Without something like this, we would either have a default set of extensions sent by clients that are ultimately ignored by origins (which might be fine), or this the set of extensions would need to be configured between clients and origins. ",
       "createdAt": "2023-06-16T18:29:30Z",
       "updatedAt": "2023-06-16T18:29:30Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 10,
+      "id": "I_kwDOJs5J2s6ConS5",
+      "title": "`Extensions` format",
+      "url": "https://github.com/chris-wood/draft-wood-privacypass-auth-scheme-extensions/issues/10",
+      "state": "OPEN",
+      "author": "thibmeu",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "**Current**\r\n\r\nThe current draft defines `Extensions` as follow\r\n\r\n```c\r\nstruct {\r\n    ExtensionType extension_type;\r\n    opaque extension_data<0..2^16-1>;\r\n} Extension;\r\n\r\nstruct {\r\n    Extension extensions<0..2^16-1>;\r\n} Extensions;\r\n```\r\n\r\n> The contents of Extensions are a list of Extension values, each of which is a type-length-value structure whose semantics are determined by the type. The type and length of each extension are 2-octet integers, in network byte order. The length of the extensions list is also a is a 2-octet integer, in network byte order.\r\n\r\nAs observed by @armfazh, an Extension maximum length in network byte order being `2 (type) + 2 (data length) + 2^16 (data)`. This does not fit in `Extensions`.\r\n\r\n**Proposed**\r\n\r\nWe suggest the following:\r\n```c\r\nconst MAXIMUM_EXTENSION_DATA_LENGTH = 2^16 -2 -2 = 2^16-4;\r\n\r\nstruct {\r\n    ExtensionType extension_type;\r\n    opaque extension_data<0..MAXIMUM_EXTENSION_DATA_LENGTH-1>;\r\n} Extension;\r\n\r\nstruct {\r\n    opaque extensions<0..2^16-1>;\r\n} Extensions;\r\n```\r\n\r\n> The contents of Extensions are a list of Extension values, each of which is a type-length-value structure whose semantics are determined by the type. The type and length of each extension are 2-octet integers, in network byte order. The length of the extensions list is also a is a 2-octet integer, in network byte order.\r\n\r\nChanges:\r\n1. Use `opaque` to avoid confusion between the extension length being the number of extensions or the length in network byte order of the serialized extensions\r\n2. Limit the extension data length to fit within `Extensions` data structure.\r\n\r\nThis should not change existing implementation, apart from adding one more constraint on what constitute a valid extension.",
+      "createdAt": "2024-03-18T09:35:31Z",
+      "updatedAt": "2024-03-18T09:39:27Z",
       "closedAt": null,
       "comments": []
     }
@@ -458,24 +474,26 @@
       "id": "PR_kwDOJs5J2s5pWowU",
       "title": "Add precision on extension types",
       "url": "https://github.com/chris-wood/draft-wood-privacypass-auth-scheme-extensions/pull/8",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "thibmeu",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "The draft is ambiguous on two points, which this commit addresses:\r\n1. extension types MAY be repeated,\r\n2. extension type MAY be `0`, even though this is a reseved value.\r\n   Otherwise, we must update the structure to start at `1`.\r\n\r\nIn addition, this commit fixes lint which the CI complains about.",
       "createdAt": "2024-03-12T09:50:51Z",
-      "updatedAt": "2024-03-12T17:38:44Z",
+      "updatedAt": "2024-03-18T14:56:01Z",
       "baseRepository": "chris-wood/draft-wood-privacypass-auth-scheme-extensions",
       "baseRefName": "main",
       "baseRefOid": "a58f1fc68b5e413a97b68388a44d23a07262a635",
       "headRepository": "thibmeu/draft-wood-privacypass-auth-scheme-extensions",
       "headRefName": "add-precision-on-extension-types",
       "headRefOid": "a0db4f21df059e3b0c7772d14321fbba2de1600b",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2024-03-18T14:54:58Z",
+      "mergedAt": "2024-03-18T14:54:58Z",
+      "mergedBy": "smhendrickson",
+      "mergeCommit": {
+        "oid": "8e7090e2ad12e97f97543f4248f6fb4ae6bbdc03"
+      },
       "comments": [],
       "reviews": [
         {
@@ -498,24 +516,26 @@
       "id": "PR_kwDOJs5J2s5pvulj",
       "title": "Add mention of required base64url padding",
       "url": "https://github.com/chris-wood/draft-wood-privacypass-auth-scheme-extensions/pull/9",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "thibmeu",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "Make the spec consistent with [Privacy Pass Auth Scheme](https://datatracker.ietf.org/doc/html/draft-ietf-privacypass-auth-scheme-15#name-token-challenge-structure). base64url padding is required.",
       "createdAt": "2024-03-15T13:21:26Z",
-      "updatedAt": "2024-03-15T13:23:43Z",
+      "updatedAt": "2024-03-18T15:11:47Z",
       "baseRepository": "chris-wood/draft-wood-privacypass-auth-scheme-extensions",
       "baseRefName": "main",
       "baseRefOid": "a58f1fc68b5e413a97b68388a44d23a07262a635",
       "headRepository": "thibmeu/draft-wood-privacypass-auth-scheme-extensions",
       "headRefName": "add-base64url-padding",
       "headRefOid": "ae4ed88de053d26dcd5c053f611820bcac8c9655",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2024-03-18T14:55:23Z",
+      "mergedAt": "2024-03-18T14:55:23Z",
+      "mergedBy": "smhendrickson",
+      "mergeCommit": {
+        "oid": "072ef16ec6d08b4edb32b21d515f0220a2de4b38"
+      },
       "comments": [
         {
           "author": "thibmeu",
