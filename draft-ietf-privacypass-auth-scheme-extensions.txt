@@ -5,12 +5,12 @@
 Privacy Pass                                              S. Hendrickson
 Internet-Draft                                                    Google
 Intended status: Standards Track                              C. A. Wood
-Expires: 19 September 2024                              Cloudflare, Inc.
-                                                           18 March 2024
+Expires: 2 October 2024                                 Cloudflare, Inc.
+                                                           31 March 2024
 
 
     The PrivateToken HTTP Authentication Scheme Extensions Parameter
-          draft-wood-privacypass-auth-scheme-extensions-latest
+          draft-ietf-privacypass-auth-scheme-extensions-latest
 
 Abstract
 
@@ -22,10 +22,10 @@ About This Document
 
    This note is to be removed before publishing as an RFC.
 
-   The latest revision of this draft can be found at https://chris-
-   wood.github.io/draft-wood-privacypass-extensible-token/draft-wood-
-   privacypass-extensible-token.html.  Status information for this
-   document may be found at https://datatracker.ietf.org/doc/draft-wood-
+   The latest revision of this draft can be found at https://ietf-wg-
+   privacypass.github.io/draft-ietf-privacypass-extensible-token/draft-
+   ietf-privacypass-extensible-token.html.  Status information for this
+   document may be found at https://datatracker.ietf.org/doc/draft-ietf-
    privacypass-auth-scheme-extensions/.
 
    Discussion of this document takes place on the Privacy Pass Working
@@ -34,8 +34,8 @@ About This Document
    at https://www.ietf.org/mailman/listinfo/privacy-pass/.
 
    Source for this draft and an issue tracker can be found at
-   https://github.com/chris-wood/draft-wood-privacypass-extensible-
-   token.
+   https://github.com/ietf-wg-privacypass/draft-ietf-privacypass-
+   extensible-token.
 
 Status of This Memo
 
@@ -52,7 +52,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 19 September 2024.
+   This Internet-Draft will expire on 2 October 2024.
 
 Copyright Notice
 
