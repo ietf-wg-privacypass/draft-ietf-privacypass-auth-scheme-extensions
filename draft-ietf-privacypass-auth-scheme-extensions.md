@@ -3,7 +3,7 @@ title: "The PrivateToken HTTP Authentication Scheme Extensions Parameter"
 abbrev: "PrivateToken Authentication Extensions"
 category: std
 
-docname: draft-wood-privacypass-auth-scheme-extensions-latest
+docname: draft-ietf-privacypass-auth-scheme-extensions-latest
 submissiontype: IETF
 number:
 date:
@@ -17,8 +17,8 @@ venue:
   group: "Privacy Pass"
   type: "Working Group"
   mail: "privacy-pass@ietf.org"
-  github: "chris-wood/draft-wood-privacypass-extensible-token"
-  latest: "https://chris-wood.github.io/draft-wood-privacypass-extensible-token/draft-wood-privacypass-extensible-token.html"
+  github: "ietf-wg-privacypass/draft-ietf-privacypass-extensible-token"
+  latest: "https://ietf-wg-privacypass.github.io/draft-ietf-privacypass-extensible-token/draft-ietf-privacypass-extensible-token.html"
 
 author:
  -
