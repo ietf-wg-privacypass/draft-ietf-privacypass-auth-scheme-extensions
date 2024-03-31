@@ -1,4 +1,4 @@
 # License
 
 See the
-[guidelines for contributions](https://github.com/chris-wood/draft-wood-privacypass-extensible-token/blob/main/CONTRIBUTING.md).
+[guidelines for contributions](https://github.com/ietf-wg-privacypass/draft-ietf-privacypass-auth-scheme-extensions/blob/main/CONTRIBUTING.md).

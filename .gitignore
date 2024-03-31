@@ -17,7 +17,7 @@
 /versioned/
 Gemfile.lock
 archive.json
-draft-wood-privacypass-auth-scheme-extensions.xml
+draft-ietf-privacypass-auth-scheme-extensions.xml
 package-lock.json
 report.xml
 !requirements.txt
