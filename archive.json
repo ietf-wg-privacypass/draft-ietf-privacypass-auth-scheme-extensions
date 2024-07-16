@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-07-14T01:25:15.711395+00:00",
+  "timestamp": "2024-07-16T01:21:07.895579+00:00",
   "repo": "ietf-wg-privacypass/draft-ietf-privacypass-auth-scheme-extensions",
   "labels": [
     {
@@ -78,7 +78,31 @@
       "labels": [],
       "body": "**Current**\r\n\r\nThe current draft defines `Extensions` as follow\r\n\r\n```c\r\nstruct {\r\n    ExtensionType extension_type;\r\n    opaque extension_data<0..2^16-1>;\r\n} Extension;\r\n\r\nstruct {\r\n    Extension extensions<0..2^16-1>;\r\n} Extensions;\r\n```\r\n\r\n> The contents of Extensions are a list of Extension values, each of which is a type-length-value structure whose semantics are determined by the type. The type and length of each extension are 2-octet integers, in network byte order. The length of the extensions list is also a is a 2-octet integer, in network byte order.\r\n\r\nAs observed by @armfazh, an Extension maximum length in network byte order being `2 (type) + 2 (data length) + 2^16 (data)`. This does not fit in `Extensions`.\r\n\r\n**Proposed**\r\n\r\nWe suggest the following:\r\n```c\r\nconst MAXIMUM_EXTENSION_DATA_LENGTH = 2^16 -2 -2 = 2^16-4;\r\n\r\nstruct {\r\n    ExtensionType extension_type;\r\n    opaque extension_data<0..MAXIMUM_EXTENSION_DATA_LENGTH-1>;\r\n} Extension;\r\n\r\nstruct {\r\n    opaque extensions<0..2^16-1>;\r\n} Extensions;\r\n```\r\n\r\n> The contents of Extensions are a list of Extension values, each of which is a type-length-value structure whose semantics are determined by the type. The type and length of each extension are 2-octet integers, in network byte order. The length of the extensions list is also a is a 2-octet integer, in network byte order.\r\n\r\nChanges:\r\n1. Use `opaque` to avoid confusion between the extension length being the number of extensions or the length in network byte order of the serialized extensions\r\n2. Limit the extension data length to fit within `Extensions` data structure.\r\n\r\nThis should not change existing implementation, apart from adding one more constraint on what constitute a valid extension.",
       "createdAt": "2024-03-18T09:35:31Z",
-      "updatedAt": "2024-03-18T09:39:27Z",
+      "updatedAt": "2024-07-15T19:31:22Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "dvorak42",
+          "authorAssociation": "NONE",
+          "body": "I'd suggest keeping the language as it currently is in the draft, since afaik that matches what most structures created using TLS presentation language in other drafts tend to do (where you're explicit about the type of the embedded structure and the sizes internally aren't adjusted based on external constraints). It would be even more messy if Extension was embedded in multiple places with different maximum lengths based on the enclosing structs (ie SignedExtensions (max 2^16-1) with extensions list (max 2^16-3) with an Extension (max 2^16-5).",
+          "createdAt": "2024-07-15T19:31:22Z",
+          "updatedAt": "2024-07-15T19:31:22Z"
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "id": "I_kwDOJs5J2s6Pnefr",
+      "title": "Client omitting extensions",
+      "url": "https://github.com/ietf-wg-privacypass/draft-ietf-privacypass-auth-scheme-extensions/issues/11",
+      "state": "OPEN",
+      "author": "dvorak42",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "Is the client allowed to omit extensions in the issuance request? Its sort of implied in the negotiation that its allowed, but afaik not explicitly called out anywhere.",
+      "createdAt": "2024-07-15T19:42:53Z",
+      "updatedAt": "2024-07-15T19:42:53Z",
       "closedAt": null,
       "comments": []
     }
