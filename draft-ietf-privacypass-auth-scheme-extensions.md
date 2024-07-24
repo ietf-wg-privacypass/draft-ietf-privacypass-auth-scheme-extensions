@@ -37,8 +37,8 @@ informative:
 
 --- abstract
 
-This document specifies a new parameter for the "PrivateToken" HTTP authentication
-scheme. This purpose of this parameter is to carry extensions for Privacy Pass
+This document specifies new parameters for the "PrivateToken" HTTP authentication
+scheme. This purpose of these parameters is to negotiate and carry extensions for Privacy Pass
 protocols that support public metadata.
 
 --- middle
@@ -69,11 +69,15 @@ scheme for carrying extensions. This extensions parameter, otherwise referred to
 public metadata, is cryptographically bound to the Token structure via the Privacy
 Pass issuance protocol.
 
+This document additionally defines an optional extension negotiation scheme which
+allows origins to indicate what extension types they expect, and allows clients to
+respond with the extensions appropriate for their context.
+
 # Conventions and Definitions
 
 {::boilerplate bcp14-tagged}
 
-# PrivateToken Extensions Parameter
+# PrivateToken Extensions Parameter {#extensions}
 
 As defined in {{Section 2.2 of AUTHSCHEME}}, the "PrivateToken" authentication
 scheme defines one parameter, "token", which contains the base64url-encoded
@@ -123,17 +127,67 @@ issuance protocol. In particular, the value of an Extensions structure is provid
 metadata for the issuance protocol. Candidate issuance protocols are specified in
 {{?PUBLIC-ISSUANCE=I-D.hendrickson-privacypass-public-metadata}}.
 
-# Extensions Negotiation {#negotiation}
+# PrivateToken Challenge Extension Parameter
 
-The mechanism Clients and Origins use to determine which set of extensions to provide
-for redemption is out of scope for this document.
+As defined in {{Section 2.1 of AUTHSCHEME}}, the "PrivateToken" authentication
+scheme defines two parameters, "challenge" which contains the base64url-encoded
+TokenChallenge struct, and a "token-key" which contains the base64url-encoded
+public key used for this challenge. This document defines two OPTIONAL new parameters, 
+"extension-set," which contains the base64url-encoded representation of the
+following ExtensionSet structure, and "extensions" which contain the base64url-encoded 
+representation of the Extensions strucuture defined in {#extensions}. This document 
+follows the default padding behavior described in {{Section 3.2 of !RFC4648}}, so the
+base64url value MUST include padding.
+
+~~~
+struct {
+    enum { false(0), true(1) } Bool;
+    Bool is_required;
+    ExtensionType extension_type;
+} ExtensionEntry;
+
+struct {
+    ExtensionEntry extension_type;
+} ExtensionSet;
+
+enum {
+    reserved(0),
+    (65535)
+} ExtensionType;
+
+struct {
+    ExtensionType extension_types<0..2^16-1>;
+} ExtensionSet;
+~~~
+
+The contents of ExtensionSet is a list of ExtensionEntry structs containing extensions (defined in #extensions),
+each of which is a type-length-value structure whose semantics are determined by the type, and a bit marking whether
+the extension is required or optional. T he type and length of each ExtensionType is a 2-octet integer, in network byte order. The
+length of the extension_types list is also a 2-octet integer, in network byte order.
+
+ExtensionTypes are to be defined outside of this document.
+
+The extensions parameter is to be used for pre-populated extension structs the origin suggests
+to the client.
+
+When presented with an ExtensionSet, a client should expect to be rejected if not providing required extensions.
+A client MAY choose to provide optional extensions or not. A client can choose to use the pre-populated extension
+provided by the origin, or craft its own.
+
+~~~
+WWW-Authenticate:
+  PrivateToken challenge="abc...", token-key="123...", extension-set="0x0001,0x0002..." extensions="def..."
+~~~
+
+# Extensions Negotiation {#negotiation}
 
 In some Privacy Pass deployments, the set
 of extensions may be well known to Clients and Origins and thus do not require negotiation.
+In this case, no extension-set or extensions are provided by the origin in the PrivateToken.
 In other settings, negotiation may be required. However, negotiation can raise privacy
-risks, especially if negotiation can be abused by Origins for partitioning Clients and
-risking Origin-Client unlinkability. Some of these risks may be mitigated if all Clients
-in a given redemption context respond to negotiation in the same manner. However, if
+risks, by partitioning Clients by their chosen provided extensions risking Origin-Client 
+unlinkability. Some of these risks may be mitigated if all Clients in a given redemption 
+context respond to negotiation in the same manner. However, if
 Clients have different observable behavior, e.g., if certain extension use is determined
 by user choice, Origins can observe this differential behavior and therefore partition
 Clients in a redemption context.
