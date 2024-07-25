@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-07-23T01:20:05.728446+00:00",
+  "timestamp": "2024-07-25T01:19:57.771258+00:00",
   "repo": "ietf-wg-privacypass/draft-ietf-privacypass-auth-scheme-extensions",
   "labels": [
     {
@@ -570,6 +570,81 @@
         }
       ],
       "reviews": []
+    },
+    {
+      "number": 12,
+      "id": "PR_kwDOJs5J2s52Y6tb",
+      "title": "Initial draft of extension negotiation",
+      "url": "https://github.com/ietf-wg-privacypass/draft-ietf-privacypass-auth-scheme-extensions/pull/12",
+      "state": "OPEN",
+      "author": "smhendrickson",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "This PR defines extension negotiation, as discussed at IETF 120 Privacy Pass.\n\nWe can use this as a model to work through whether we want to include negotiation functionality as an optional feature, or continue on auth-scheme without the functionality.\n\nWe received feedback during and after IETF that multiple parties have developed similar functionality along these lines, prompting the PR.",
+      "createdAt": "2024-07-24T21:10:23Z",
+      "updatedAt": "2024-07-25T01:08:25Z",
+      "baseRepository": "ietf-wg-privacypass/draft-ietf-privacypass-auth-scheme-extensions",
+      "baseRefName": "main",
+      "baseRefOid": "02abe197850be31c85abe0d8cf5b42fdc51f4277",
+      "headRepository": "ietf-wg-privacypass/draft-ietf-privacypass-auth-scheme-extensions",
+      "headRefName": "extnegotiation",
+      "headRefOid": "b50772487448131007a8893a6044cf26029c82e8",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "smhendrickson",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Note this would address https://github.com/ietf-wg-privacypass/draft-ietf-privacypass-auth-scheme-extensions/issues/2",
+          "createdAt": "2024-07-24T21:19:04Z",
+          "updatedAt": "2024-07-24T21:19:04Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJs5J2s6DA6Np",
+          "commit": {
+            "abbreviatedOid": "b507724"
+          },
+          "author": "dvorak42",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-07-25T01:06:22Z",
+          "updatedAt": "2024-07-25T01:06:22Z",
+          "comments": [
+            {
+              "originalPosition": 63,
+              "body": "Looks like this should be ExtensionEntry (and you should drop the one on 149:151?",
+              "createdAt": "2024-07-25T01:06:22Z",
+              "updatedAt": "2024-07-25T01:06:22Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs5J2s6DA7wG",
+          "commit": {
+            "abbreviatedOid": "b507724"
+          },
+          "author": "dvorak42",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-07-25T01:08:25Z",
+          "updatedAt": "2024-07-25T01:08:25Z",
+          "comments": [
+            {
+              "originalPosition": 63,
+              "body": "Alternatively:\r\n\r\nstruct {\r\n    ExtensionType required_extensions<0..2^16-1>;\r\n    ExtensionType optional_extensions<0..2^16-1>;\r\n}\r\n\r\nSo that the client can just iterate through required_extensions to determine whether its even worth parsing the rest of the list?",
+              "createdAt": "2024-07-25T01:08:25Z",
+              "updatedAt": "2024-07-25T01:08:25Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
