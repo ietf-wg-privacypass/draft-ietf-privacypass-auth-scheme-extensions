@@ -146,17 +146,13 @@ struct {
     ExtensionType extension_type;
 } ExtensionEntry;
 
-struct {
-    ExtensionEntry extension_type;
-} ExtensionSet;
-
 enum {
     reserved(0),
     (65535)
 } ExtensionType;
 
 struct {
-    ExtensionType extension_types<0..2^16-1>;
+    ExtensionEntry extension_types<0..2^16-1>;
 } ExtensionSet;
 ~~~
 
