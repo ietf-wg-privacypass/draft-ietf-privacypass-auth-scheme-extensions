@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-07-25T01:19:57.771258+00:00",
+  "timestamp": "2024-07-28T01:25:52.587739+00:00",
   "repo": "ietf-wg-privacypass/draft-ietf-privacypass-auth-scheme-extensions",
   "labels": [
     {
@@ -583,13 +583,13 @@
       "labels": [],
       "body": "This PR defines extension negotiation, as discussed at IETF 120 Privacy Pass.\n\nWe can use this as a model to work through whether we want to include negotiation functionality as an optional feature, or continue on auth-scheme without the functionality.\n\nWe received feedback during and after IETF that multiple parties have developed similar functionality along these lines, prompting the PR.",
       "createdAt": "2024-07-24T21:10:23Z",
-      "updatedAt": "2024-07-25T01:08:25Z",
+      "updatedAt": "2024-07-26T00:25:01Z",
       "baseRepository": "ietf-wg-privacypass/draft-ietf-privacypass-auth-scheme-extensions",
       "baseRefName": "main",
       "baseRefOid": "02abe197850be31c85abe0d8cf5b42fdc51f4277",
       "headRepository": "ietf-wg-privacypass/draft-ietf-privacypass-auth-scheme-extensions",
       "headRefName": "extnegotiation",
-      "headRefOid": "b50772487448131007a8893a6044cf26029c82e8",
+      "headRefOid": "6e7f9399d3fca5b2b2bc2a0fe7081596638183cb",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -641,6 +641,26 @@
               "body": "Alternatively:\r\n\r\nstruct {\r\n    ExtensionType required_extensions<0..2^16-1>;\r\n    ExtensionType optional_extensions<0..2^16-1>;\r\n}\r\n\r\nSo that the client can just iterate through required_extensions to determine whether its even worth parsing the rest of the list?",
               "createdAt": "2024-07-25T01:08:25Z",
               "updatedAt": "2024-07-25T01:08:25Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs5J2s6DK0Xy",
+          "commit": {
+            "abbreviatedOid": "b507724"
+          },
+          "author": "smhendrickson",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-07-26T00:25:01Z",
+          "updatedAt": "2024-07-26T00:25:01Z",
+          "comments": [
+            {
+              "originalPosition": 63,
+              "body": "Addressed with the rename. I'd prefer to keep the ExtensionEntry struct, as I think this might adapt cleaner if we need fancier optionality later on. This preference isn't strong - feel free to push back.",
+              "createdAt": "2024-07-26T00:25:01Z",
+              "updatedAt": "2024-07-26T00:25:01Z"
             }
           ]
         }
