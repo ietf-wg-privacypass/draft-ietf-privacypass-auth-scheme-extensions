@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-07-28T01:25:52.587739+00:00",
+  "timestamp": "2024-07-30T01:20:22.937451+00:00",
   "repo": "ietf-wg-privacypass/draft-ietf-privacypass-auth-scheme-extensions",
   "labels": [
     {
@@ -583,7 +583,7 @@
       "labels": [],
       "body": "This PR defines extension negotiation, as discussed at IETF 120 Privacy Pass.\n\nWe can use this as a model to work through whether we want to include negotiation functionality as an optional feature, or continue on auth-scheme without the functionality.\n\nWe received feedback during and after IETF that multiple parties have developed similar functionality along these lines, prompting the PR.",
       "createdAt": "2024-07-24T21:10:23Z",
-      "updatedAt": "2024-07-26T00:25:01Z",
+      "updatedAt": "2024-07-29T22:12:41Z",
       "baseRepository": "ietf-wg-privacypass/draft-ietf-privacypass-auth-scheme-extensions",
       "baseRefName": "main",
       "baseRefOid": "02abe197850be31c85abe0d8cf5b42fdc51f4277",
@@ -663,6 +663,59 @@
               "updatedAt": "2024-07-26T00:25:01Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOJs5J2s6DftPW",
+          "commit": {
+            "abbreviatedOid": "6e7f939"
+          },
+          "author": "pbsawant",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-07-29T21:27:21Z",
+          "updatedAt": "2024-07-29T21:27:21Z",
+          "comments": [
+            {
+              "originalPosition": 62,
+              "body": "I don't see Extensions struct defined as a member of ExtensionEntry struct.",
+              "createdAt": "2024-07-29T21:27:21Z",
+              "updatedAt": "2024-07-29T21:27:21Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs5J2s6Df7tc",
+          "commit": {
+            "abbreviatedOid": "6e7f939"
+          },
+          "author": "pbsawant",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-07-29T22:10:36Z",
+          "updatedAt": "2024-07-29T22:10:37Z",
+          "comments": [
+            {
+              "originalPosition": 83,
+              "body": "How does client process these two new parameters? since \"extension-set\" and \"extensions\" carry ExtensionType,  is there redundancy in these parameters? Can we instead just have \"extensions\", containing a list of Extension structs? Extension struct may carry an empty extension_data value, which indicates any or wild card extension parameter value.",
+              "createdAt": "2024-07-29T22:10:36Z",
+              "updatedAt": "2024-07-29T22:11:39Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs5J2s6Df8Nu",
+          "commit": {
+            "abbreviatedOid": "6e7f939"
+          },
+          "author": "pbsawant",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "Review comments and few questions.",
+          "createdAt": "2024-07-29T22:12:41Z",
+          "updatedAt": "2024-07-29T22:12:41Z",
+          "comments": []
         }
       ]
     }
