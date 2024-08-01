@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-07-30T01:20:22.937451+00:00",
+  "timestamp": "2024-08-01T01:26:47.197865+00:00",
   "repo": "ietf-wg-privacypass/draft-ietf-privacypass-auth-scheme-extensions",
   "labels": [
     {
@@ -583,7 +583,7 @@
       "labels": [],
       "body": "This PR defines extension negotiation, as discussed at IETF 120 Privacy Pass.\n\nWe can use this as a model to work through whether we want to include negotiation functionality as an optional feature, or continue on auth-scheme without the functionality.\n\nWe received feedback during and after IETF that multiple parties have developed similar functionality along these lines, prompting the PR.",
       "createdAt": "2024-07-24T21:10:23Z",
-      "updatedAt": "2024-07-29T22:12:41Z",
+      "updatedAt": "2024-07-30T17:57:56Z",
       "baseRepository": "ietf-wg-privacypass/draft-ietf-privacypass-auth-scheme-extensions",
       "baseRefName": "main",
       "baseRefOid": "02abe197850be31c85abe0d8cf5b42fdc51f4277",
@@ -716,6 +716,46 @@
           "createdAt": "2024-07-29T22:12:41Z",
           "updatedAt": "2024-07-29T22:12:41Z",
           "comments": []
+        },
+        {
+          "id": "PRR_kwDOJs5J2s6DoH8r",
+          "commit": {
+            "abbreviatedOid": "6e7f939"
+          },
+          "author": "bbrinckman",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-07-30T17:56:30Z",
+          "updatedAt": "2024-07-30T17:56:30Z",
+          "comments": [
+            {
+              "originalPosition": 62,
+              "body": "@pbsawant, would it make sense to signal the entire extension in the challenge? The extension types should be sufficient for extension negotiation.",
+              "createdAt": "2024-07-30T17:56:30Z",
+              "updatedAt": "2024-07-30T17:56:30Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs5J2s6DoImB",
+          "commit": {
+            "abbreviatedOid": "6e7f939"
+          },
+          "author": "bbrinckman",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-07-30T17:57:55Z",
+          "updatedAt": "2024-07-30T17:57:56Z",
+          "comments": [
+            {
+              "originalPosition": 83,
+              "body": "Would challenge, token-key and extension-set not suffice?",
+              "createdAt": "2024-07-30T17:57:56Z",
+              "updatedAt": "2024-07-30T17:57:56Z"
+            }
+          ]
         }
       ]
     }
