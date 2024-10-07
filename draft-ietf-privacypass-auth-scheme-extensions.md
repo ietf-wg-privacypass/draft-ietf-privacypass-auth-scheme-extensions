@@ -167,7 +167,7 @@ The extensions parameter is to be used for pre-populated extension structs the o
 to the client.
 
 When presented with an ExtensionSet, a client should expect to be rejected if not providing required extensions.
-A client MAY choose to provide optional extensions or not. A client can choose to use the pre-populated extension
+A client MAY provide optional extensions. A client MAY use the pre-populated extension
 provided by the origin, or craft its own.
 
 ~~~
