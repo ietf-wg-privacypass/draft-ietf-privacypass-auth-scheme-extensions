@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-10-13T01:42:39.629689+00:00",
+  "timestamp": "2024-10-15T01:38:45.617186+00:00",
   "repo": "ietf-wg-privacypass/draft-ietf-privacypass-auth-scheme-extensions",
   "labels": [
     {
@@ -583,7 +583,7 @@
       "labels": [],
       "body": "This PR defines extension negotiation, as discussed at IETF 120 Privacy Pass.\n\nWe can use this as a model to work through whether we want to include negotiation functionality as an optional feature, or continue on auth-scheme without the functionality.\n\nWe received feedback during and after IETF that multiple parties have developed similar functionality along these lines, prompting the PR.",
       "createdAt": "2024-07-24T21:10:23Z",
-      "updatedAt": "2024-10-07T14:22:03Z",
+      "updatedAt": "2024-10-14T14:23:24Z",
       "baseRepository": "ietf-wg-privacypass/draft-ietf-privacypass-auth-scheme-extensions",
       "baseRefName": "main",
       "baseRefOid": "02abe197850be31c85abe0d8cf5b42fdc51f4277",
@@ -601,6 +601,13 @@
           "body": "Note this would address https://github.com/ietf-wg-privacypass/draft-ietf-privacypass-auth-scheme-extensions/issues/2",
           "createdAt": "2024-07-24T21:19:04Z",
           "updatedAt": "2024-07-24T21:19:04Z"
+        },
+        {
+          "author": "smhendrickson",
+          "authorAssociation": "COLLABORATOR",
+          "body": "This will address #11 and #2 ",
+          "createdAt": "2024-10-14T14:23:22Z",
+          "updatedAt": "2024-10-14T14:23:22Z"
         }
       ],
       "reviews": [
