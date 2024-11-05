@@ -132,10 +132,10 @@ metadata for the issuance protocol. Candidate issuance protocols are specified i
 As defined in {{Section 2.1 of AUTHSCHEME}}, the "PrivateToken" authentication
 scheme defines two parameters, "challenge" which contains the base64url-encoded
 TokenChallenge struct, and a "token-key" which contains the base64url-encoded
-public key used for this challenge. This document defines two OPTIONAL new parameters, 
+public key used for this challenge. This document defines two OPTIONAL new parameters,
 "extension-set," which contains the base64url-encoded representation of the
-following ExtensionSet structure, and "extensions" which contain the base64url-encoded 
-representation of the Extensions strucuture defined in {#extensions}. This document 
+following ExtensionSet structure, and "extensions" which contain the base64url-encoded
+representation of the Extensions strucuture defined in {#extensions}. This document
 follows the default padding behavior described in {{Section 3.2 of !RFC4648}}, so the
 base64url value MUST include padding.
 
@@ -181,8 +181,8 @@ In some Privacy Pass deployments, the set
 of extensions may be well known to Clients and Origins and thus do not require negotiation.
 In this case, no extension-set or extensions are provided by the origin in the PrivateToken.
 In other settings, negotiation may be required. However, negotiation can raise privacy
-risks, by partitioning Clients by their chosen provided extensions risking Origin-Client 
-unlinkability. Some of these risks may be mitigated if all Clients in a given redemption 
+risks, by partitioning Clients by their chosen provided extensions risking Origin-Client
+unlinkability. Some of these risks may be mitigated if all Clients in a given redemption
 context respond to negotiation in the same manner. However, if
 Clients have different observable behavior, e.g., if certain extension use is determined
 by user choice, Origins can observe this differential behavior and therefore partition
