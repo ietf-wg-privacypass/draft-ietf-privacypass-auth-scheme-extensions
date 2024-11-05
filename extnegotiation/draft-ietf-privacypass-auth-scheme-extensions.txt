@@ -5,27 +5,28 @@
 Privacy Pass                                              S. Hendrickson
 Internet-Draft                                                    Google
 Intended status: Standards Track                              C. A. Wood
-Expires: 30 September 2024                              Cloudflare, Inc.
-                                                           29 March 2024
+Expires: 9 May 2025                                     Cloudflare, Inc.
+                                                         5 November 2024
 
 
     The PrivateToken HTTP Authentication Scheme Extensions Parameter
-          draft-wood-privacypass-auth-scheme-extensions-latest
+          draft-ietf-privacypass-auth-scheme-extensions-latest
 
 Abstract
 
-   This document specifies a new parameter for the "PrivateToken" HTTP
-   authentication scheme.  This purpose of this parameter is to carry
-   extensions for Privacy Pass protocols that support public metadata.
+   This document specifies new parameters for the "PrivateToken" HTTP
+   authentication scheme.  This purpose of these parameters is to
+   negotiate and carry extensions for Privacy Pass protocols that
+   support public metadata.
 
 About This Document
 
    This note is to be removed before publishing as an RFC.
 
-   The latest revision of this draft can be found at https://chris-
-   wood.github.io/draft-wood-privacypass-extensible-token/draft-wood-
-   privacypass-extensible-token.html.  Status information for this
-   document may be found at https://datatracker.ietf.org/doc/draft-wood-
+   The latest revision of this draft can be found at https://ietf-wg-
+   privacypass.github.io/draft-ietf-privacypass-extensible-token/draft-
+   ietf-privacypass-extensible-token.html.  Status information for this
+   document may be found at https://datatracker.ietf.org/doc/draft-ietf-
    privacypass-auth-scheme-extensions/.
 
    Discussion of this document takes place on the Privacy Pass Working
@@ -34,8 +35,8 @@ About This Document
    at https://www.ietf.org/mailman/listinfo/privacy-pass/.
 
    Source for this draft and an issue tracker can be found at
-   https://github.com/chris-wood/draft-wood-privacypass-extensible-
-   token.
+   https://github.com/ietf-wg-privacypass/draft-ietf-privacypass-
+   extensible-token.
 
 Status of This Memo
 
@@ -52,7 +53,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 30 September 2024.
+   This Internet-Draft will expire on 9 May 2025.
 
 Copyright Notice
 
@@ -73,12 +74,13 @@ Table of Contents
    1.  Introduction
    2.  Conventions and Definitions
    3.  PrivateToken Extensions Parameter
-   4.  Extensions Negotiation
-   5.  Security Considerations
-   6.  IANA Considerations
-   7.  References
-     7.1.  Normative References
-     7.2.  Informative References
+   4.  PrivateToken Challenge Extension Parameter
+   5.  Extensions Negotiation
+   6.  Security Considerations
+   7.  IANA Considerations
+   8.  References
+     8.1.  Normative References
+     8.2.  Informative References
    Authors' Addresses
 
 1.  Introduction
@@ -106,6 +108,11 @@ Table of Contents
    parameter, otherwise referred to as public metadata, is
    cryptographically bound to the Token structure via the Privacy Pass
    issuance protocol.
+
+   This document additionally defines an optional extension negotiation
+   scheme which allows origins to indicate what extension types they
+   expect, and allows clients to respond with the extensions appropriate
+   for their context.
 
 2.  Conventions and Definitions
 
@@ -159,7 +166,7 @@ Table of Contents
 
    Future documents may specify extensions to be included in this
    structure.  Registration details for these extensions are in
-   Section 6.
+   Section 7.
 
    Each Privacy Pass issuance protocol, identified by a token type,
    specifies the structure of the PrivateToken value to be used.
@@ -168,17 +175,64 @@ Table of Contents
    provided as metadata for the issuance protocol.  Candidate issuance
    protocols are specified in [PUBLIC-ISSUANCE].
 
-4.  Extensions Negotiation
+4.  PrivateToken Challenge Extension Parameter
 
-   The mechanism Clients and Origins use to determine which set of
-   extensions to provide for redemption is out of scope for this
-   document.
+   As defined in Section 2.1 of [AUTHSCHEME], the "PrivateToken"
+   authentication scheme defines two parameters, "challenge" which
+   contains the base64url-encoded TokenChallenge struct, and a "token-
+   key" which contains the base64url-encoded public key used for this
+   challenge.  This document defines two OPTIONAL new parameters,
+   "extension-set," which contains the base64url-encoded representation
+   of the following ExtensionSet structure, and "extensions" which
+   contain the base64url-encoded representation of the Extensions
+   strucuture defined in {#extensions}. This document follows the
+   default padding behavior described in Section 3.2 of [RFC4648], so
+   the base64url value MUST include padding.
+
+   struct {
+       enum { false(0), true(1) } Bool;
+       Bool is_required;
+       ExtensionType extension_type;
+   } ExtensionEntry;
+
+   enum {
+       reserved(0),
+       (65535)
+   } ExtensionType;
+
+   struct {
+       ExtensionEntry extension_types<0..2^16-1>;
+   } ExtensionSet;
+
+   The contents of ExtensionSet is a list of ExtensionEntry structs
+   containing extensions (defined in #extensions), each of which is a
+   type-length-value structure whose semantics are determined by the
+   type, and a bit marking whether the extension is required or
+   optional.  T he type and length of each ExtensionType is a 2-octet
+   integer, in network byte order.  The length of the extension_types
+   list is also a 2-octet integer, in network byte order.
+
+   ExtensionTypes are to be defined outside of this document.
+
+   The extensions parameter is to be used for pre-populated extension
+   structs the origin suggests to the client.
+
+   When presented with an ExtensionSet, a client should expect to be
+   rejected if not providing required extensions.  A client MAY provide
+   optional extensions.  A client MAY use the pre-populated extension
+   provided by the origin, or craft its own.
+
+WWW-Authenticate:
+  PrivateToken challenge="abc...", token-key="123...", extension-set="0x0001,0x0002..." extensions="def..."
+
+5.  Extensions Negotiation
 
    In some Privacy Pass deployments, the set of extensions may be well
    known to Clients and Origins and thus do not require negotiation.  In
-   other settings, negotiation may be required.  However, negotiation
-   can raise privacy risks, especially if negotiation can be abused by
-   Origins for partitioning Clients and risking Origin-Client
+   this case, no extension-set or extensions are provided by the origin
+   in the PrivateToken.  In other settings, negotiation may be required.
+   However, negotiation can raise privacy risks, by partitioning Clients
+   by their chosen provided extensions risking Origin-Client
    unlinkability.  Some of these risks may be mitigated if all Clients
    in a given redemption context respond to negotiation in the same
    manner.  However, if Clients have different observable behavior,
@@ -186,14 +240,14 @@ Table of Contents
    can observe this differential behavior and therefore partition
    Clients in a redemption context.
 
-5.  Security Considerations
+6.  Security Considerations
 
    Privacy considerations for tokens that include additional information
    are discussed in Section 6.1 of [ARCHITECTURE].  Additional
    considerations for use of extensions, including those that arise when
-   deciding which extensions to use, are described in Section 4.
+   deciding which extensions to use, are described in Section 5.
 
-6.  IANA Considerations
+7.  IANA Considerations
 
    IANA is requested to create a new "Privacy Pass PrivateToken
    Extensions" registry in the "Privacy Pass Parameters" page to list
@@ -220,9 +274,9 @@ Table of Contents
    partitioning the client anonymity set as described in Section 6.1 of
    [ARCHITECTURE].
 
-7.  References
+8.  References
 
-7.1.  Normative References
+8.1.  Normative References
 
    [AUTHSCHEME]
               Pauly, T., Valdez, S., and C. A. Wood, "The Privacy Pass
@@ -249,7 +303,7 @@ Table of Contents
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
 
-7.2.  Informative References
+8.2.  Informative References
 
    [ARCHITECTURE]
               Davidson, A., Iyengar, J., and C. A. Wood, "The Privacy
