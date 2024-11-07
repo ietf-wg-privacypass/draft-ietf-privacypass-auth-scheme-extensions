@@ -172,7 +172,7 @@ provided by the origin, or craft its own.
 
 ~~~
 WWW-Authenticate:
-  PrivateToken challenge="abc...", token-key="123...", extension-set="0x0001,0x0002..." extensions="def..."
+  PrivateToken challenge="abc...", token-key="123...", extension-set="1,2..." extensions="def..."
 ~~~
 
 # Extensions Negotiation {#negotiation}
