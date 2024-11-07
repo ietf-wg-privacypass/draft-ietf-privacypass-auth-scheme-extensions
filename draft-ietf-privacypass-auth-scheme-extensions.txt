@@ -24,10 +24,11 @@ About This Document
    This note is to be removed before publishing as an RFC.
 
    The latest revision of this draft can be found at https://ietf-wg-
-   privacypass.github.io/draft-ietf-privacypass-extensible-token/draft-
-   ietf-privacypass-extensible-token.html.  Status information for this
-   document may be found at https://datatracker.ietf.org/doc/draft-ietf-
-   privacypass-auth-scheme-extensions/.
+   privacypass.github.io/draft-ietf-privacypass-auth-scheme-extensions/
+   draft-ietf-privacypass-auth-scheme-extensions.html.  Status
+   information for this document may be found at
+   https://datatracker.ietf.org/doc/draft-ietf-privacypass-auth-scheme-
+   extensions/.
 
    Discussion of this document takes place on the Privacy Pass Working
    Group mailing list (mailto:privacy-pass@ietf.org), which is archived
@@ -35,8 +36,8 @@ About This Document
    at https://www.ietf.org/mailman/listinfo/privacy-pass/.
 
    Source for this draft and an issue tracker can be found at
-   https://github.com/ietf-wg-privacypass/draft-ietf-privacypass-
-   extensible-token.
+   https://github.com/ietf-wg-privacypass/draft-ietf-privacypass-auth-
+   scheme-extensions.
 
 Status of This Memo
 
