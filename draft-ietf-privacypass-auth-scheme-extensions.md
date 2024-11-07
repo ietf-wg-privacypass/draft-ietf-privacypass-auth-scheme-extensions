@@ -17,8 +17,8 @@ venue:
   group: "Privacy Pass"
   type: "Working Group"
   mail: "privacy-pass@ietf.org"
-  github: "ietf-wg-privacypass/draft-ietf-privacypass-extensible-token"
-  latest: "https://ietf-wg-privacypass.github.io/draft-ietf-privacypass-extensible-token/draft-ietf-privacypass-extensible-token.html"
+  github: "ietf-wg-privacypass/draft-ietf-privacypass-auth-scheme-extensions"
+  latest: "https://ietf-wg-privacypass.github.io/draft-ietf-privacypass-auth-scheme-extensions/draft-ietf-privacypass-auth-scheme-extensions.html"
 
 author:
  -
