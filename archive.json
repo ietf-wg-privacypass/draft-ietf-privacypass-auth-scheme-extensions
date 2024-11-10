@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-11-07T01:36:03.629430+00:00",
+  "timestamp": "2024-11-10T01:41:01.726824+00:00",
   "repo": "ietf-wg-privacypass/draft-ietf-privacypass-auth-scheme-extensions",
   "labels": [
     {
@@ -55,16 +55,24 @@
       "id": "I_kwDOJs5J2s5o-Jg8",
       "title": "Extension negotiation",
       "url": "https://github.com/ietf-wg-privacypass/draft-ietf-privacypass-auth-scheme-extensions/issues/2",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "chris-wood",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "I wonder if it would be useful for origins to express what sort of extensions they want for a particular token. They could do this by including a list of extension types in the `WWW-Authenticate` challenge header. If clients don't want to provide the list of extensions they request, they could simply choose to not respond to the challenge. Without something like this, we would either have a default set of extensions sent by clients that are ultimately ignored by origins (which might be fine), or this the set of extensions would need to be configured between clients and origins. ",
       "createdAt": "2023-06-16T18:29:30Z",
-      "updatedAt": "2023-06-16T18:29:30Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2024-11-07T07:23:21Z",
+      "closedAt": "2024-11-07T07:23:21Z",
+      "comments": [
+        {
+          "author": "smhendrickson",
+          "authorAssociation": "COLLABORATOR",
+          "body": "This is now addressed by #12 ",
+          "createdAt": "2024-11-07T07:23:21Z",
+          "updatedAt": "2024-11-07T07:23:21Z"
+        }
+      ]
     },
     {
       "number": 10,
@@ -95,15 +103,55 @@
       "id": "I_kwDOJs5J2s6Pnefr",
       "title": "Client omitting extensions",
       "url": "https://github.com/ietf-wg-privacypass/draft-ietf-privacypass-auth-scheme-extensions/issues/11",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "dvorak42",
       "authorAssociation": "NONE",
       "assignees": [],
       "labels": [],
       "body": "Is the client allowed to omit extensions in the issuance request? Its sort of implied in the negotiation that its allowed, but afaik not explicitly called out anywhere.",
       "createdAt": "2024-07-15T19:42:53Z",
-      "updatedAt": "2024-07-15T19:42:53Z",
+      "updatedAt": "2024-11-07T07:23:40Z",
+      "closedAt": "2024-11-07T07:23:40Z",
+      "comments": [
+        {
+          "author": "smhendrickson",
+          "authorAssociation": "COLLABORATOR",
+          "body": "This is now addressed by #12 ",
+          "createdAt": "2024-11-07T07:23:36Z",
+          "updatedAt": "2024-11-07T07:23:36Z"
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "id": "I_kwDOJs5J2s6dYrap",
+      "title": "`extensions-set` example with decimal numbers instead of hex",
+      "url": "https://github.com/ietf-wg-privacypass/draft-ietf-privacypass-auth-scheme-extensions/issues/13",
+      "state": "OPEN",
+      "author": "thibmeu",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Current example for extension set is\r\n```\r\nextension-set=\"0x0001,0x0002\"\r\n```\r\n\r\nI suggest to use decimal instead, or at least clearly indicate or recommend an encoding (prefixed hex string in this case) ",
+      "createdAt": "2024-11-07T09:59:36Z",
+      "updatedAt": "2024-11-07T09:59:51Z",
       "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 14,
+      "id": "I_kwDOJs5J2s6dYsRa",
+      "title": "Draft github field should be updated",
+      "url": "https://github.com/ietf-wg-privacypass/draft-ietf-privacypass-auth-scheme-extensions/issues/14",
+      "state": "CLOSED",
+      "author": "thibmeu",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "The GitHub link of the draft is outdated.\r\n\r\nIt should be updated to\r\nietf-wg-privacypass/draft-ietf-privacypass-auth-scheme-extensions",
+      "createdAt": "2024-11-07T10:00:58Z",
+      "updatedAt": "2024-11-07T18:10:46Z",
+      "closedAt": "2024-11-07T18:10:46Z",
       "comments": []
     }
   ],
@@ -576,24 +624,26 @@
       "id": "PR_kwDOJs5J2s52Y6tb",
       "title": "Initial draft of extension negotiation",
       "url": "https://github.com/ietf-wg-privacypass/draft-ietf-privacypass-auth-scheme-extensions/pull/12",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "smhendrickson",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "This PR defines extension negotiation, as discussed at IETF 120 Privacy Pass.\n\nWe can use this as a model to work through whether we want to include negotiation functionality as an optional feature, or continue on auth-scheme without the functionality.\n\nWe received feedback during and after IETF that multiple parties have developed similar functionality along these lines, prompting the PR.",
       "createdAt": "2024-07-24T21:10:23Z",
-      "updatedAt": "2024-11-05T13:08:30Z",
+      "updatedAt": "2024-11-07T07:22:42Z",
       "baseRepository": "ietf-wg-privacypass/draft-ietf-privacypass-auth-scheme-extensions",
       "baseRefName": "main",
       "baseRefOid": "02abe197850be31c85abe0d8cf5b42fdc51f4277",
       "headRepository": "ietf-wg-privacypass/draft-ietf-privacypass-auth-scheme-extensions",
       "headRefName": "extnegotiation",
       "headRefOid": "7741b80a135a72ff63250add0c91f0b7b8d75711",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2024-11-07T07:22:42Z",
+      "mergedAt": "2024-11-07T07:22:42Z",
+      "mergedBy": "smhendrickson",
+      "mergeCommit": {
+        "oid": "d4f7fcb89e52b3e50a84452e1e175b051eaa7f80"
+      },
       "comments": [
         {
           "author": "smhendrickson",
@@ -818,6 +868,82 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 15,
+      "id": "PR_kwDOJs5J2s6BOR56",
+      "title": "Update metadata",
+      "url": "https://github.com/ietf-wg-privacypass/draft-ietf-privacypass-auth-scheme-extensions/pull/15",
+      "state": "MERGED",
+      "author": "smhendrickson",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Fix #14",
+      "createdAt": "2024-11-07T18:01:23Z",
+      "updatedAt": "2024-11-07T18:10:46Z",
+      "baseRepository": "ietf-wg-privacypass/draft-ietf-privacypass-auth-scheme-extensions",
+      "baseRefName": "main",
+      "baseRefOid": "d4f7fcb89e52b3e50a84452e1e175b051eaa7f80",
+      "headRepository": "ietf-wg-privacypass/draft-ietf-privacypass-auth-scheme-extensions",
+      "headRefName": "metadata",
+      "headRefOid": "28884a316d312b83daea815263f1bc52fd07da64",
+      "closedAt": "2024-11-07T18:10:45Z",
+      "mergedAt": "2024-11-07T18:10:45Z",
+      "mergedBy": "smhendrickson",
+      "mergeCommit": {
+        "oid": "50b45053300ecfccbad09facb1cd4bcd1e2cd9d6"
+      },
+      "comments": [
+        {
+          "author": "smhendrickson",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@thibmeu PTAL",
+          "createdAt": "2024-11-07T18:03:10Z",
+          "updatedAt": "2024-11-07T18:03:10Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJs5J2s6QWXqy",
+          "commit": {
+            "abbreviatedOid": "28884a3"
+          },
+          "author": "thibmeu",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "Lgtm! ",
+          "createdAt": "2024-11-07T18:05:31Z",
+          "updatedAt": "2024-11-07T18:05:31Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "id": "PR_kwDOJs5J2s6BOVr8",
+      "title": "Decimal encode extension-set example",
+      "url": "https://github.com/ietf-wg-privacypass/draft-ietf-privacypass-auth-scheme-extensions/pull/16",
+      "state": "OPEN",
+      "author": "smhendrickson",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "This is intended to address #13. However, I am not sure if this is the right solution. By spec, I think we need to base64 encode the ExtensionSet structure.\n\nWe may want to add test/interop vectors to the bottom of the spec in a new section, and substitute these as the example.",
+      "createdAt": "2024-11-07T18:10:00Z",
+      "updatedAt": "2024-11-07T18:10:01Z",
+      "baseRepository": "ietf-wg-privacypass/draft-ietf-privacypass-auth-scheme-extensions",
+      "baseRefName": "main",
+      "baseRefOid": "d4f7fcb89e52b3e50a84452e1e175b051eaa7f80",
+      "headRepository": "ietf-wg-privacypass/draft-ietf-privacypass-auth-scheme-extensions",
+      "headRefName": "encoding",
+      "headRefOid": "796373c1f9c24accb869f5434fe3725437d481df",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
