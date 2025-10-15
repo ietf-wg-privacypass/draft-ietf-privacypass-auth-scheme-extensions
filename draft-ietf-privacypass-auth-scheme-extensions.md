@@ -158,7 +158,7 @@ struct {
 
 The contents of ExtensionSet is a list of ExtensionEntry structs containing extensions (defined in #extensions),
 each of which is a type-length-value structure whose semantics are determined by the type, and a bit marking whether
-the extension is required or optional. T he type and length of each ExtensionType is a 2-octet integer, in network byte order. The
+the extension is required or optional. The type and length of each ExtensionType is a 2-octet integer, in network byte order. The
 length of the extension_types list is also a 2-octet integer, in network byte order.
 
 ExtensionTypes are to be defined outside of this document.
