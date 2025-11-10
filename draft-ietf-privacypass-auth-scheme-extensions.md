@@ -25,6 +25,10 @@ author:
     fullname: Scott Hendrickson
     organization: Google
     email: "scott@shendrickson.com"
+ -
+    fullname: Christopher A. Wood
+    organization: Apple
+    email: caw@heapingbits.net
 
 normative:
 
