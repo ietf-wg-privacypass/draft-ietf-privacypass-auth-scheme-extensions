@@ -37,7 +37,7 @@ informative:
 
 --- abstract
 
-This document specifies new parameters for the "PrivateToken" HTTP authentication scheme, called extensions. 
+This document specifies new parameters for the "PrivateToken" HTTP authentication scheme, called extensions.
 The purpose of these extensions is to negotiate and carry public metadata for Privacy Pass protocols.
 
 --- middle
@@ -64,7 +64,7 @@ to flow from the issuance protocol, including, for example, public metadata
 that is incorporated into the issuance protocol.
 
 This document specifies a new parameter for the "PrivateToken" HTTP authentication
-scheme for carrying extensions. This extensions parameter is cryptographically bound 
+scheme for carrying extensions. This extensions parameter is cryptographically bound
 to the Token structure via the Privacy Pass issuance protocol.
 
 This document additionally defines an optional extension negotiation scheme which
@@ -82,7 +82,7 @@ scheme defines one parameter, "token", which contains the base64url-encoded
 Token struct. This document defines a new parameter, "extensions," which contains
 the base64url-encoded representation of the following Extensions structure.
 This document follows the default padding behavior described in
-{{Section 3.2 of !RFC4648}}, so the base64url value MUST include padding. 
+{{Section 3.2 of !RFC4648}}, so the base64url value MUST include padding.
 
 ~~~
 struct {
@@ -116,8 +116,8 @@ parameter to origins would use an Authorization header field like the following:
 Authorization: PrivateToken token="abc...", extensions="def..."
 ~~~
 
-Since the new parameters (extensions, extension-set) are defined as containing base64url-encoded data, 
-they will contain characters that require double-quotes. Therefore, parameter values for "token" and 
+Since the new parameters (extensions, extension-set) are defined as containing base64url-encoded data,
+they will contain characters that require double-quotes. Therefore, parameter values for "token" and
 "extensions" MUST be enclosed in double-quotes.
 
 Future documents may specify extensions to be included in this structure.
@@ -193,9 +193,9 @@ Clients in a redemption context.
 # Security Considerations
 
 Privacy considerations for tokens that include additional information are discussed
-in {{?ARCHITECTURE=RFC9578}}. Additional 
-considerations for use of extensions, including those that arise when deciding which 
-extensions to use, are described in {{negotiation}}. The TLS Protocol {{!RFC8446, Section 1.3}} 
+in {{?ARCHITECTURE=RFC9578}}. Additional
+considerations for use of extensions, including those that arise when deciding which
+extensions to use, are described in {{negotiation}}. The TLS Protocol {{!RFC8446, Section 1.3}}
 provides the transport layer security guarantees that protect the transmission of the
 PrivateToken and its extensions.
 
