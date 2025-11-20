@@ -37,9 +37,8 @@ informative:
 
 --- abstract
 
-This document specifies new parameters for the "PrivateToken" HTTP authentication
-scheme. This purpose of these parameters is to negotiate and carry extensions for Privacy Pass
-protocols that support public metadata.
+This document specifies new parameters for the "PrivateToken" HTTP authentication scheme, called extensions.
+The purpose of these extensions is to negotiate and carry public metadata for Privacy Pass protocols.
 
 --- middle
 
@@ -65,9 +64,8 @@ to flow from the issuance protocol, including, for example, public metadata
 that is incorporated into the issuance protocol.
 
 This document specifies a new parameter for the "PrivateToken" HTTP authentication
-scheme for carrying extensions. This extensions parameter, otherwise referred to as
-public metadata, is cryptographically bound to the Token structure via the Privacy
-Pass issuance protocol.
+scheme for carrying extensions. This extensions parameter is cryptographically bound
+to the Token structure via the Privacy Pass issuance protocol.
 
 This document additionally defines an optional extension negotiation scheme which
 allows origins to indicate what extension types they expect, and allows clients to
@@ -118,13 +116,17 @@ parameter to origins would use an Authorization header field like the following:
 Authorization: PrivateToken token="abc...", extensions="def..."
 ~~~
 
+Since the new parameters (extensions, extension-set) are defined as containing base64url-encoded data,
+they will contain characters that require double-quotes. Therefore, parameter values for "token" and
+"extensions" MUST be enclosed in double-quotes.
+
 Future documents may specify extensions to be included in this structure.
 Registration details for these extensions are in {{iana}}.
 
 Each Privacy Pass issuance protocol, identified by a token type, specifies the structure
 of the PrivateToken value to be used. Extensions are bound to the resulting tokens via the
 issuance protocol. In particular, the value of an Extensions structure is provided as
-metadata for the issuance protocol. Candidate issuance protocols are specified in
+metadata for the issuance protocol. Issuance protocols are specified in
 {{?PUBLIC-ISSUANCE=I-D.hendrickson-privacypass-public-metadata}}.
 
 # PrivateToken Challenge Extension Parameter
@@ -135,7 +137,7 @@ TokenChallenge struct, and a "token-key" which contains the base64url-encoded
 public key used for this challenge. This document defines two OPTIONAL new parameters,
 "extension-set," which contains the base64url-encoded representation of the
 following ExtensionSet structure, and "extensions" which contain the base64url-encoded
-representation of the Extensions strucuture defined in {#extensions}. This document
+representation of the Extensions structure defined in {{extensions}}. This document
 follows the default padding behavior described in {{Section 3.2 of !RFC4648}}, so the
 base64url value MUST include padding.
 
@@ -156,7 +158,7 @@ struct {
 } ExtensionSet;
 ~~~
 
-The contents of ExtensionSet is a list of ExtensionEntry structs containing extensions (defined in #extensions),
+The contents of ExtensionSet is a list of ExtensionEntry structs containing extensions (defined in {{extensions}}),
 each of which is a type-length-value structure whose semantics are determined by the type, and a bit marking whether
 the extension is required or optional. T he type and length of each ExtensionType is a 2-octet integer, in network byte order. The
 length of the extension_types list is also a 2-octet integer, in network byte order.
@@ -172,7 +174,7 @@ provided by the origin, or craft its own.
 
 ~~~
 WWW-Authenticate:
-  PrivateToken challenge="abc...", token-key="123...", extension-set="0x0001,0x0002..." extensions="def..."
+  PrivateToken challenge="abc...", token-key="123...", extension-set="%00%01%00%02..." extensions="def..."
 ~~~
 
 # Extensions Negotiation {#negotiation}
@@ -191,9 +193,11 @@ Clients in a redemption context.
 # Security Considerations
 
 Privacy considerations for tokens that include additional information are discussed
-in {{Section 6.1 of ?ARCHITECTURE=I-D.ietf-privacypass-architecture}}. Additional
+in {{?ARCHITECTURE=RFC9578}}. Additional
 considerations for use of extensions, including those that arise when deciding which
-extensions to use, are described in {{negotiation}}.
+extensions to use, are described in {{negotiation}}. The TLS Protocol {{!RFC8446, Section 1.3}}
+provides the transport layer security guarantees that protect the transmission of the
+PrivateToken and its extensions.
 
 # IANA Considerations {#iana}
 
@@ -214,7 +218,7 @@ registration policy ({{!RFC8126, Section 4.6}}). Designated experts need to
 ensure that the extension is sufficiently clearly defined and, importantly,
 has a clear description of the privacy implications of using the extension,
 framed in the context of partitioning the client anonymity set as described
-in {{Section 6.1 of ?ARCHITECTURE}}.
+in {{?ARCHITECTURE}}.
 
 --- back
 
