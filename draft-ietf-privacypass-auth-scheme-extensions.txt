@@ -5,8 +5,8 @@
 Privacy Pass                                              S. Hendrickson
 Internet-Draft                                                    Google
 Intended status: Standards Track                              C. A. Wood
-Expires: 24 May 2026                                               Apple
-                                                        20 November 2025
+Expires: 28 May 2026                                               Apple
+                                                        24 November 2025
 
 
     The PrivateToken HTTP Authentication Scheme Extensions Parameter
@@ -54,7 +54,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 24 May 2026.
+   This Internet-Draft will expire on 28 May 2026.
 
 Copyright Notice
 
@@ -254,6 +254,16 @@ WWW-Authenticate:
    [RFC8446], Section 1.3 provides the transport layer security
    guarantees that protect the transmission of the PrivateToken and its
    extensions.
+
+   The primary security concern introduced by the extensions parameter
+   is the risk of client tagging or tracking through the metadata
+   itself.  The size and specific content of the extension metadata can
+   potetntially add extra, observable bits of information that a service
+   could use to tag clients.  Mitigations include mechanisms to monitor
+   that clients are getting evenly distributed bits, mechanisms to
+   ensure clients fairly pick their own metadata, and mechanisms to
+   ensure that clients understand the total traffic on the system.
+   These are out of scope.
 
 7.  IANA Considerations
 
