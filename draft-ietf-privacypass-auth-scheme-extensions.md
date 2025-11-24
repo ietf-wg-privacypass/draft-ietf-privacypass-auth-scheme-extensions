@@ -199,6 +199,13 @@ extensions to use, are described in {{negotiation}}. The TLS Protocol {{!RFC8446
 provides the transport layer security guarantees that protect the transmission of the
 PrivateToken and its extensions.
 
+The primary security concern introduced by the extensions parameter is the risk of client tagging
+or tracking through the metadata itself. The size and specific content of the extension metadata
+can potetntially add extra, observable bits of information that a service could use to tag clients.
+Mitigations include mechanisms to monitor that clients are getting evenly distributed bits,
+mechanisms to ensure clients fairly pick their own metadata, and mechanisms to ensure that
+clients understand the total traffic on the system. These are out of scope.
+
 # IANA Considerations {#iana}
 
 IANA is requested to create a new "Privacy Pass PrivateToken Extensions" registry
