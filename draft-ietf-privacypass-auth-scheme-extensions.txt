@@ -5,8 +5,7 @@
 Privacy Pass                                              S. Hendrickson
 Internet-Draft                                                    Google
 Intended status: Standards Track                              C. A. Wood
-Expires: 14 November 2026                                          Apple
-                                                             13 May 2026
+Expires: 14 November 2026                                    13 May 2026
 
 
     The PrivateToken HTTP Authentication Scheme Extensions Parameter
@@ -347,5 +346,4 @@ Authors' Addresses
 
 
    Christopher A. Wood
-   Apple
    Email: caw@heapingbits.net
