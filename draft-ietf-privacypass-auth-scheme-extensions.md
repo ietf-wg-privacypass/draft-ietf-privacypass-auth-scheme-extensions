@@ -115,9 +115,9 @@ parameter to origins would use an Authorization header field like the following:
 Authorization: PrivateToken token="abc...", extensions="def..."
 ~~~
 
-Since the new parameters (extensions, extension-set) are defined as containing base64url-encoded data,
-they will contain characters that require double-quotes. Therefore, parameter values for "token" and
-"extensions" MUST be enclosed in double-quotes.
+The "token" parameter follows {{AUTHSCHEME}}: its value can be either a token or
+a quoted-string, though senders SHOULD use quoted-string form. The "extensions"
+parameter defined here MUST use quoted-string form.
 
 Future documents may specify extensions to be included in this structure.
 Registration details for these extensions are in {{iana}}.
@@ -176,6 +176,11 @@ WWW-Authenticate:
   PrivateToken challenge="abc...", token-key="123...", extension-set="%00%01%00%02..." extensions="def..."
 ~~~
 
+The "challenge" and "token-key" parameters follow {{AUTHSCHEME}}: their values
+can be either tokens or quoted-strings, though senders SHOULD use quoted-string
+form. The "extension-set" and "extensions" parameters defined here MUST use
+quoted-string form.
+
 # Extensions Negotiation {#negotiation}
 
 In some Privacy Pass deployments, the set
@@ -227,4 +232,3 @@ framed in the context of partitioning the client anonymity set as described
 in {{?ARCHITECTURE}}.
 
 --- back
-
